@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/"> <!-- Link CSS Folder -->
+    <link rel="stylesheet" href="style.css">    <!-- Link main CSS -->
+
+    <script src="https://kit.fontawesome.com/3561a4943c.js" crossorigin="anonymous"></script> <!-- Fontawesome Lib -->
+
+    <title>Website - Streaming </title>
+</head>
+<body class="hidden">
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav_left">
+            <img src="img/logo.png">
+            <h1>Website</h1>
+        </div>
+
+        <div class="nav_right">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <ul>
+                <input type="search" placeholder="search" id="search_bar" oninput="search()">
+                <div id="recherche"></div>
+            </ul>
+
+            <ul>
+            <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
+            <div id="rechercheTag">
+                <button id="action" onclick="searchTag('none')">None</button>
+                <button id="action" onclick="searchTag('action')">Action</button>
+                <button id="action" onclick="searchTag('horreur')">Horreur</button>
+            </div>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="nav_top">
+            <ul>
+                <li class="active"><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="#popular"><i class="fa-solid fa-fire"></i>Popular</a></li>
+                <li><a href="#favorites"><i class="fa-solid fa-star"></i> Favorites</a></li>
+            </ul>
+        </div>
+
+        <div class="nav_bottom">
+
+        </div>
+    </nav>
+
+
+    <!-- Main Section -->
+    <section>
+        <!--
+        <header>
+            <div class="slider">
+                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </header>
+        -->
+
+        <div class="categories">
+            <div class="categories_title">
+                <h2><i class="fa-solid fa-tags"></i>Explore by categories</h2>
+                <button onclick="toggleChevron('explore', 3)"><i class="fa-solid fa-chevron-right" id="chevron-right-explore"></i><i class="fa-solid fa-chevron-down" id="chevron-down-explore"></i></button>
+            </div>
+            <ul class="tags">
+                <button onclick="plus_explore('action')">Action</button>
+                <button onclick="plus_explore('comedie')">Comédie</button>
+                <button onclick="plus_explore('sf')">science-fiction</button>
+                <button onclick="plus_explore('horreur')">Horreur</button>
+                <button onclick="plus_explore('romantiques/drama')">romantiques/drama</button>
+                <button onclick="plus_explore('aventure')">aventure</button>
+            </ul>
+            <ul id="ul_explore">
+                <div class="movies_card" id="Explore0"></div>
+                <div class="movies_card" id="Explore1"></div>
+                <div class="movies_card" id="Explore2"></div>
+                <div class="movies_card" id="Explore3"></div>
+                <div class="load_card" id="load_card_explore">
+                    <i class="fa-solid fa-plus" onclick="plus_categories()"></i>
+                </div>
+            </ul>
+        </div>
+
+        <div class="movies_categories">
+            <div class="continue">
+                <div class="continue title">
+                    <h2><i class="fa-solid fa-clock"></i>Continue</h2>
+                    <button onclick="toggleChevron('continue', 0)"><i class="fa-solid fa-chevron-right" id="chevron-right-continue"></i><i class="fa-solid fa-chevron-down" id="chevron-down-continue"></i></button>
+                </div>
+                <ul id="ul_continue">
+                    <div class="movies_card">
+                        <a href="html/viewVideo.html" class="film" id="a1" onclick="" data-tag=""> <img id="img1" src=""> </a>
+                    </div>
+                    <div class="movies_card">
+                        <a href="html/viewVideo.html" class="film" id="a2" onclick="" data-tag=""> <img id="img2" src=""> </a>
+                    </div>
+                    <div class="movies_card">
+                        <a href="html/viewVideo.html" class="film" id="a3" onclick="" data-tag=""> <img id="img3" src=""> </a>
+                    </div>
+                    <div class="movies_card">
+                        <a href="html/viewVideo.html" class="film" id="a4" onclick="" data-tag=""> <img id="img4" src=""> </a>
+                    </div>
+                    
+                    <div class="load_card" id="load_card">
+                        <i class="fa-solid fa-plus" onclick="plus()"></i>
+                    </div>
+                </ul>
+            </div>
+            <div class="news">
+                <div class="news title">
+                    <h2><i class="fa-solid fa-plus"></i>News</h2>
+                    <button onclick="toggleChevron('news', 1)"><i class="fa-solid fa-chevron-right" id="chevron-right-news"></i><i class="fa-solid fa-chevron-down" id="chevron-down-news"></i></button>
+                </div>
+                <ul id="ul_news">
+                    <div class="movies_card" id="news0"></div>
+                    <div class="movies_card" id="news1"></div>
+                    <div class="movies_card" id="news2"></div>
+                    <div class="movies_card" id="news3"></div>
+                    <div class="load_card" id="load_card_news">
+                        <i class="fa-solid fa-plus" onclick="plus2()"></i>
+                    </div>
+                </ul>
+            </div>
+            <div class="trending">
+                <div class="trending title">
+                    <h2><i class="fa-solid fa-fire"></i>Trending</h2>
+                    <button onclick="toggleChevron('trending', 2)"><i class="fa-solid fa-chevron-right" id="chevron-right-trending"></i><i class="fa-solid fa-chevron-down" id="chevron-down-trending"></i></button>
+                </div>
+                <ul id="ul_trending">
+                    <div class="movies_card" id="trend1"></div>
+                    <div class="movies_card" id="trend2"></div>
+                    <div class="movies_card" id="trend3"></div>
+                    <div class="movies_card" id="trend4"></div>
+                    <div class="load_card" id="load_card_trending">
+                        <i class="fa-solid fa-plus" onclick="plus3()"></i>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script> <!-- Load JS-->
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/js-sha1"></script>
+<script>
+    const allowedIPs = [
+        "44579fbb49bdc21ea501c092270521b5b7a55517"
+    ];
+
+    function getIPAddress() {
+        fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Adresse IP de l\'utilisateur :', data.ip);
+            // Vous pouvez faire d'autres traitements avec l'adresse IP ici
+            if (allowedIPs.includes(sha1(data.ip))) {
+                console.log("IP autorisée. Affichage du contenu...");
+                console.log(sha1("88.125.140.142"));
+                document.body.classList.remove('hidden');
+                start2();
+            } else {
+                console.log("IP non autorisée. Redirection vers la page d'erreur 404...");
+                window.location.href = '/erreur404.html';
+            }
+        })
+        .catch(error => {
+            console.error('Une erreur s\'est produite lors de la récupération de l\'adresse IP :', error);
+        });
+    }
+
+    // Appel de la fonction pour récupérer l'adresse IP lorsque la page est chargée
+    window.onload = function() {
+        console.log("Début de la récupération de l'adresse IP...");
+        getIPAddress();
+    };
+</script>
