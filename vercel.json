@@ -12,6 +12,14 @@
       {
         "src": "style.css",
         "use": "@vercel/static"
+      },
+      {
+        "src": "js/main.js",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "image/logo.png",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
