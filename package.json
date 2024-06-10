@@ -1,0 +1,13 @@
+{
+    "name": "streaming",
+    "version": "1.0.0",
+    "main": "js/server.js",
+    "scripts": {
+      "start": "node js/server.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongodb": "^3.6.3"
+    }
+  }
+  
