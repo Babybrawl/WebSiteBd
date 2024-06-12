@@ -2,7 +2,7 @@ const express = require('express');
 const { MongoClient } = require('mongodb');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;  // Utilisez le port de l'environnement si disponible
 
 // Remplacez "votre-uri-mongodb" par l'URI de votre base de données MongoDB
 const mongoURI = "mongodb+srv://nicolasbabybrawl:QDRGrf8sq2OMtCKH@babybrawl.aod6irz.mongodb.net/?retryWrites=true&w=majority&appName=Babybrawl";
@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 async function connectToMongo() {
   try {
     await client.connect();
-    //console.log("Connexion à MongoDB réussie !");
+    console.log("Connexion à MongoDB réussie !");
   } catch (error) {
     console.error("Erreur lors de la connexion à MongoDB :", error);
     throw error;
