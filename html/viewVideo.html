@@ -23,5 +23,19 @@
     <h3 id="desc">desciption</h3>
 
     <script src="../js/main.js"></script> <!-- Load JS-->
+    <script>
+        // Attendre que l'iframe soit complètement chargé
+        document.getElementById('video').onload = function() {
+            // Accéder au document de l'iframe
+            var iframe = document.getElementById('video');
+            var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+
+            // Sélectionner l'élément avec l'ID ann_1325 et le masquer
+            var element = iframeDocument.getElementById('ann_1325');
+            if (element) {
+                element.style.display = 'none';
+            }
+        };
+    </script>
 </body>
 </html>
