@@ -1,5 +1,6 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const path = require('path');
 
 const app = express();
