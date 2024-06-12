@@ -379,7 +379,9 @@ section{
         display: none;
     }
 
-
+#video{
+    width: 100%;
+}
 @media (max-width: 768px) {
     #ann_1325{
         display: none;
