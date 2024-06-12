@@ -379,10 +379,6 @@ section{
         display: none;
     }
 
-    #video {
-        width: 100%;
-        height: auto; /* Pour permettre à la hauteur de s'ajuster automatiquement */
-    }
 @media (max-width: 768px) {
     #ann_1325{
         display: none;
