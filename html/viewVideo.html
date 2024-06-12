@@ -6,41 +6,34 @@
     <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
-<body onload="setTimeout(start, 1000);">
+<body onload="setTimeout(start(), 1000);">
 
     <h1 id="titre">TITRE</h1>
-    <select id="serie"></select>
-    <select id="saison"></select>
+    <select id="serie">
+
+    </select>
+
+    <select id="saison">
+
+    </select>
     <br>
     <br>
-    <iframe width="765" height="435" src="https://example.com/iframeContent.html" scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen="" id="video"></iframe>
+    <iframe width="765" height="435" src="" scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen="" id="video"></iframe>
 
-    <h3 id="desc">description</h3>
+    <h3 id="desc">desciption</h3>
 
-    <script src="../js/main.js"></script> <!-- Load JS -->
+    <script src="../js/main.js"></script> <!-- Load JS-->
     <script>
-        // Fonction pour masquer les pubs dans l'iframe
-        function blockAds(iframeDocument) {
-            var adSelectors = [
-                '.ad', '.advertisement', '[id^="ad_"]', '[class^="ad-"]', 'iframe[src*="ad"]'
-            ];
-
-            adSelectors.forEach(function(selector) {
-                var ads = iframeDocument.querySelectorAll(selector);
-                ads.forEach(function(ad) {
-                    ad.style.display = 'none';
-                });
-            });
-        }
-
         // Attendre que l'iframe soit complètement chargé
         document.getElementById('video').onload = function() {
+            // Accéder au document de l'iframe
             var iframe = document.getElementById('video');
-            try {
-                var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-                blockAds(iframeDocument);
-            } catch (e) {
-                console.error('Impossible d\'accéder au contenu de l\'iframe:', e);
+            var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+
+            // Sélectionner l'élément avec l'ID ann_1325 et le masquer
+            var element = iframeDocument.getElementById('ann_1325');
+            if (element) {
+                element.style.display = 'none';
             }
         };
     </script>
