@@ -856,6 +856,7 @@ async function change(x, saison) {
 
 // Fonction pour masquer la div avec un délai de 1 seconde
 function masquerDiv() {
+    console.log("lancer");
     // Sélectionne toutes les divs dans le document
     var divs = document.getElementsByTagName('div');
 
@@ -867,10 +868,14 @@ function masquerDiv() {
         // Si le z-index de la div est 9999999, alors la cache
         if (zIndex === '9999999') {
             div.style.display = 'none';
+            console.log("ok");
             break; // Arrête la boucle après avoir trouvé la première div avec le bon z-index
         }
     }
 }
 
 // Démarrer la fonction après un délai de 1 seconde
-setTimeout(masquerDiv, 1000);
+var iframe = document.getElementById('video');
+iframe.onload = function() {
+    setTimeout(masquerDiv, 1000);
+};
