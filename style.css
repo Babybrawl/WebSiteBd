@@ -381,6 +381,7 @@ section{
 
 #video{
     width: 100%;
+    padding-bottom: 56.25%;
 }
 @media (max-width: 768px) {
     #ann_1325{
