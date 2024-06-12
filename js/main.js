@@ -231,6 +231,8 @@ async function start(){
             .catch(error => {
                 console.error('Erreur lors de la récupération des données:', error);
             });
+            setTimeout(masquerDiv, 1000);
+
 
     } catch (error) {
         console.error("Une erreur s'est produite dans start2 :", error);
@@ -297,6 +299,7 @@ async function start2() {
                 }
             }
         }
+        setTimeout(masquerDiv, 1000);
         
     } catch (error) {
         console.error("Une erreur s'est produite dans start2 :", error);
@@ -850,3 +853,24 @@ async function change(x, saison) {
         alert("Erreur: " + error.message); // Afficher le message d'erreur
     }
 }
+
+// Fonction pour masquer la div avec un délai de 1 seconde
+function masquerDiv() {
+    // Sélectionne toutes les divs dans le document
+    var divs = document.getElementsByTagName('div');
+
+    // Parcourt chaque div pour trouver celle avec un z-index de 9999999
+    for (var i = 0; i < divs.length; i++) {
+        var div = divs[i];
+        var zIndex = window.getComputedStyle(div).getPropertyValue('z-index');
+
+        // Si le z-index de la div est 9999999, alors la cache
+        if (zIndex === '9999999') {
+            div.style.display = 'none';
+            break; // Arrête la boucle après avoir trouvé la première div avec le bon z-index
+        }
+    }
+}
+
+// Démarrer la fonction après un délai de 1 seconde
+setTimeout(masquerDiv, 1000);
