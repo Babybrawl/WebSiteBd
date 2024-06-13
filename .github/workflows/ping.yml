@@ -2,7 +2,7 @@ name: Ping Vercel Site
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Ceci enverra un ping toutes les 5 minutes
+    - cron: '*/5 * * * *'  # Ceci enverra un ping toutes les 5 minutes
   workflow_dispatch:  # Pour déclencher manuellement si nécessaire
 
 jobs:
