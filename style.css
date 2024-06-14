@@ -454,8 +454,11 @@ section{
 }
 
 
-@media (max-width: 768px) {
-    #ann_1325{
+@media (max-width: 750px) {
+    section{
+        padding: 90px 0 0 0;
+    }
+    nav.sidebar{
         display: none;
     }
 }
