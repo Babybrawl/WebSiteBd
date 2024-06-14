@@ -478,13 +478,13 @@ section{
 }
 @media (max-width: 1600px) {
     .continue{
-        width: 80%;
+        width: 100%;
     }
     .news{
-        width: 80%;
+        width: 100%;
     }
     .trending{
-        width: 80%;
+        width: 100%;
     }
     #ul_continue{
         overflow: auto hidden;
