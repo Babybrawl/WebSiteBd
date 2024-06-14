@@ -589,9 +589,3 @@ section{
         display: none;
     }
 }
-@media (max-width: 410px) {
-    /* Styles spécifiques pour la largeur des ul à 650px */
-    nav.navbar {
-        padding: 0;
-    }
-}
