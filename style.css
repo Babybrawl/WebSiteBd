@@ -237,6 +237,7 @@ section{
         display: flex;
         flex-direction: column;
         padding-left: 50px;
+        width: calc(100% - 180px);
     }
 
     section .categories .categories_title{
@@ -300,6 +301,7 @@ section{
         display: flex;
         flex-direction: column;
         padding-left: 50px;
+        width: calc(100% - 180px);
     }
 
         /* Categories Title */
