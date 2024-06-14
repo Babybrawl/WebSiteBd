@@ -73,10 +73,9 @@ body {
         margin-right: 2.5%; /* Assure l'espace entre les cartes */
     }
 }
-/*
-@media (max-width: 768px) {
-    #cata .movies_card {
-        flex: 0 1 100%;  //1 carte par ligne 
-        margin-right: 0;  //Pas d'espace supplémentaire nécessaire 
+
+@media (max-width: 750px) {
+    nav .sidebar {
+        display: none;
     }
-}*/
+}
