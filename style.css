@@ -350,9 +350,9 @@ section{
         }
 
         section ul .load_card {
-            width: 250px;
-            min-width: 250px;
-            max-width: 250px;
+            width: 250px !important;
+            min-width: 250px !important;
+            max-width: 250px !important;
             height: 320px;
             background-color: #20202179;
             border-radius: 15px;
@@ -362,7 +362,7 @@ section{
             justify-content: center;
             cursor: pointer;
             border: solid transparent 3px;
-        }        
+        }            
 
         section ul .load_card i{
             background-color: #202021;
