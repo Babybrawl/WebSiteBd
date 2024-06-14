@@ -892,9 +892,6 @@ async function populateCatalogue() {
 
 
 function clickMenu() {
-    if (document.getElementById("sidebar").style.display == "none") {
-        document.getElementById("sidebar").style.display = "flex";
-    } else {
-        document.getElementById("sidebar").style.display = "none";
-    }
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("active");
 }
