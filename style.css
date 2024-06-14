@@ -486,8 +486,7 @@ section{
     /* Styles pour les éléments avec les ID ul_continue, ul_news, ul_trending, ul_explore */
     #ul_continue, #ul_news, #ul_trending, #ul_explore {
         overflow: auto;
-        /* Vous ne pouvez pas combiner 'overflow: auto' et 'hidden' comme ceci. */
-        overflow-x: hidden;
+        overflow-x: hidden; /* Correction de la syntaxe overflow */
     }
 
     /* Styles pour les éléments ul à l'intérieur de sections */
@@ -535,16 +534,20 @@ section{
         display: none;
     }
 
+    /* Styles spécifiques pour la largeur des ul à 950px */
     section ul {
         width: 87%;
     }
 
+    /* Styles spécifiques pour la largeur des .categories à 950px */
     section .categories {
         width: 100%;
     }
 }
 
+/* Media Query pour les écrans jusqu'à 650px de large */
 @media (max-width: 650px) {
+    /* Styles spécifiques pour la largeur des ul à 650px */
     section ul {
         width: 87%;
     }
