@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
 <body onload="setTimeout(start(), 1000);">
 
-    <div class="container">
-        <h1 id="titre">TITRE</h1>
-        <div class="selectors">
-            <select id="serie"></select>
-            <select id="saison"></select>
-        </div>
-        <iframe width="765" height="435" src="" scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen="" id="video"></iframe>
-        <h3 id="desc">Description</h3>
-    </div>
+    <h1 id="titre">TITRE</h1>
+    <select id="serie">
 
-    <script src="../js/main.js"></script> <!-- Load JS -->
+    </select>
+
+    <select id="saison">
+
+    </select>
+    <br>
+    <br>
+    <iframe width="765" height="435" src="" scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen="" id="video"></iframe>
+
+    <h3 id="desc">desciption</h3>
+
+    <script src="../js/main.js"></script> <!-- Load JS-->
     <script>
         // Attendre que l'iframe soit complètement chargé
         document.getElementById('video').onload = function() {
