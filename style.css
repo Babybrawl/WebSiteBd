@@ -452,14 +452,21 @@ section{
         font-size: 16px;
     }
 }
-
+@media (max-width: 1600px) {
+    #ul_continue{
+        overflow: auto hidden;
+    }
+    #ul_news{
+        overflow: auto hidden;
+    }
+    #ul_trending{
+        overflow: auto hidden;
+    }
+}
 
 @media (max-width: 750px) {
     section{
         padding: 90px 0 0 0;
-    }
-    #ul_continue{
-        overflow: auto hidden;
     }
     nav.sidebar{
         display: none;
