@@ -106,8 +106,9 @@ html, body {
     flex-direction: column;
     justify-content: space-between;
     padding-top: 50px;
-    margin-top: 80px; /* Match with navbar height */
+    margin-top: 0; /* Remove margin-top */
     z-index: 999; /* Ensure it's below navbar */
+    top: 80px; /* Align directly below the navbar */
 }
 
 .sidebar .nav_top ul {
@@ -145,10 +146,11 @@ html, body {
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    margin: 80px auto 0; /* Adjust margin-top to match navbar height */
+    margin: 0 auto; /* Center the video-container horizontally */
     max-width: 800px;
     background-color: #202021;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-top: 180px; /* Adjust as necessary */
 }
 
 .video-container h1#titre {
