@@ -60,20 +60,23 @@ body {
     border-radius: 15px;
 }
 
-@media (max-width: 1200px) {
-    .movies_card {
-        flex: 0 1 calc(33.33% - 20px); /* 3 cartes par ligne sur les écrans plus petits */
+@media (max-width: 1600px) {
+    #cata .movies_card {
+        flex: 0 1 30%; /* 3 cartes par ligne */
+        margin-right: 1.5%; /* Assure l'espace entre les cartes */
     }
 }
 
-@media (max-width: 992px) {
-    .movies_card {
-        flex: 0 1 calc(50% - 20px); /* 2 cartes par ligne sur les écrans encore plus petits */
+@media (max-width: 1300px) {
+    #cata .movies_card {
+        flex: 0 1 45%; /* 2 cartes par ligne */
+        margin-right: 2.5%; /* Assure l'espace entre les cartes */
     }
 }
-
+/*
 @media (max-width: 768px) {
-    .movies_card {
-        flex: 0 1 calc(100% - 20px); /* 1 carte par ligne sur les petits écrans */
+    #cata .movies_card {
+        flex: 0 1 100%;  //1 carte par ligne 
+        margin-right: 0;  //Pas d'espace supplémentaire nécessaire 
     }
-}
+}*/
