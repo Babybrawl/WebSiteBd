@@ -459,7 +459,7 @@ section{
         padding: 90px 0 0 0;
     }
     #ul_continue{
-        overflow-x: auto hidden;
+        overflow: auto hidden;
     }
     nav.sidebar{
         display: none;
