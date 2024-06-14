@@ -6,6 +6,7 @@ html{
 }
 body{
     width: calc(100% - 180px);
+    overflow: hidden auto;
 }
 /*
 .hidden {
