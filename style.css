@@ -472,9 +472,9 @@ section{
     section .categories ul.tags{
         margin-right: 100px;
     }
-    section ul {
-        width: 75%;
-    }
+        ul {
+            width: 75%;
+        }
 }
 @media (max-width: 1600px) {
     .continue{
