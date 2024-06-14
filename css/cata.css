@@ -75,7 +75,7 @@ body {
 }
 
 @media (max-width: 750px) {
-    .sidebar {
+    nav.sidebar {
         display: none;
     }
 }
