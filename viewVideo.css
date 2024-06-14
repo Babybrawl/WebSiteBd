@@ -12,89 +12,85 @@ html, body {
 }
 
 /* Navbar */
-.navbar {
+nav.navbar{
     background-color: #202021;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 25px;
+    padding: 5px 25px 5px 25px;
+    height: 8%;
     position: fixed;
     width: 100%;
-    z-index: 1000; /* Ensure it's above other content */
-    top: 0; /* Fix navbar to the top of the viewport */
 }
 
-.navbar .nav_left {
+nav.navbar .nav_left{
     display: flex;
     align-items: center;
+    width: 20%;
 }
 
-.navbar .nav_left img {
+nav.navbar .nav_left img{
     width: 60px;
     height: 60px;
-    margin-right: 10px;
+    margin-right: 20px;
     border-radius: 50%;
     background-color: #4B9168;
 }
 
-.navbar .nav_left h1 {
-    margin: 0;
-    color: #FEFEFE;
-}
-
-.navbar .nav_right {
+nav.navbar .nav_right{
+    width: 80%;
     display: flex;
     align-items: center;
 }
 
-.navbar .nav_right input[type="search"] {
-    width: 200px;
-    height: 30px;
-    border-radius: 5px;
+nav.navbar .nav_right input{
+    width: 500px;
+    height: 35px;
+    border-radius: 50px;
     border: none;
     background-color: #151517;
     color: #77767B;
-    padding: 5px 10px;
-    margin-right: 10px;
+    padding: 5px 35px 5px 35px;
+    margin-right: 25px;
 }
 
-.navbar .nav_right button {
-    width: 150px;
-    height: 30px;
-    background-color: #151517;
-    border: #4B9168 2px solid;
-    border-radius: 25px;
-    color: #4B9168;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-.navbar .nav_right ul {
-    display: flex;
-    align-items: center;
-}
-
-.navbar .nav_right ul div {
+nav.navbar .nav_right ul div{
     position: absolute;
-    width: 150px;
-    height: 200px;
+    width: 500px;
+    height: 500px;
     background-color: grey;
-    border-radius: 10px;
+    border-radius: 30px;
+    overflow-x: hidden;
     overflow-y: auto;
     display: none;
-    z-index: 1001; /* Ensure dropdown is above other content */
 }
 
-.navbar .nav_right ul div div {
-    height: 50px;
+nav.navbar .nav_right ul div div{
+    height: 150px;
     width: 100%;
     background-color: white;
 }
 
-.navbar .nav_right i {
+
+nav.navbar .nav_right i{
+    position: absolute;
     color: #77767B;
-    margin-left: 10px;
+    margin-left: 12px;
 }
+
+nav.navbar .nav_right button{
+    width: 150px;
+    height: 35px;
+    background: transparent;
+    border-radius: 50px;
+    border: #4B9168 2px solid;
+    color: #4B9168;
+    cursor: pointer;
+}
+    /* button:hover */
+    nav.navbar .nav_right button:hover{
+        background-color: rgba(75, 145, 104, 0.137)
+    }
+
 
 /* Sidebar */
 .sidebar {
