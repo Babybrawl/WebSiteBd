@@ -534,4 +534,18 @@ section{
     nav.sidebar {
         display: none;
     }
+
+    section ul {
+        width: 87%;
+    }
+
+    section .categories {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    section ul {
+        width: 87%;
+    }
 }
