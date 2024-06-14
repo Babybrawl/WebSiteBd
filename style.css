@@ -86,24 +86,42 @@ body{
     height: 100%;
 }
 
+D'accord, je vais rendre votre code responsive en suivant le même principe que l'exemple donné. J'ajouterai des media queries pour ajuster la mise en page en fonction de la taille de l'écran.
+
+```css
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #151517;
+    color: #FEFEFE;
+    width: 100%;
+    height: 100%;
+}
+
 /* Navbar */
-nav.navbar{
+nav.navbar {
     background-color: #202021;
     display: flex;
     align-items: center;
-    padding: 5px 25px 5px 25px;
+    padding: 5px 25px;
     height: 8%;
     position: fixed;
     width: 100%;
+    z-index: 1000;
 }
 
-nav.navbar .nav_left{
+nav.navbar .nav_left {
     display: flex;
     align-items: center;
     width: 20%;
 }
 
-nav.navbar .nav_left img{
+nav.navbar .nav_left img {
     width: 60px;
     height: 60px;
     margin-right: 20px;
@@ -111,24 +129,24 @@ nav.navbar .nav_left img{
     background-color: #4B9168;
 }
 
-nav.navbar .nav_right{
+nav.navbar .nav_right {
     width: 80%;
     display: flex;
     align-items: center;
 }
 
-nav.navbar .nav_right input{
+nav.navbar .nav_right input {
     width: 500px;
     height: 35px;
     border-radius: 50px;
     border: none;
     background-color: #151517;
     color: #77767B;
-    padding: 5px 35px 5px 35px;
+    padding: 5px 35px;
     margin-right: 25px;
 }
 
-nav.navbar .nav_right ul div{
+nav.navbar .nav_right ul div {
     position: absolute;
     width: 500px;
     height: 500px;
@@ -139,36 +157,34 @@ nav.navbar .nav_right ul div{
     display: none;
 }
 
-nav.navbar .nav_right ul div div{
+nav.navbar .nav_right ul div div {
     height: 150px;
     width: 100%;
     background-color: white;
 }
 
-
-nav.navbar .nav_right i{
+nav.navbar .nav_right i {
     position: absolute;
     color: #77767B;
     margin-left: 12px;
 }
 
-nav.navbar .nav_right button{
+nav.navbar .nav_right button {
     width: 150px;
     height: 35px;
     background: transparent;
     border-radius: 50px;
-    border: #4B9168 2px solid;
+    border: 2px solid #4B9168;
     color: #4B9168;
     cursor: pointer;
 }
-    /* button:hover */
-    nav.navbar .nav_right button:hover{
-        background-color: rgba(75, 145, 104, 0.137)
-    }
+
+nav.navbar .nav_right button:hover {
+    background-color: rgba(75, 145, 104, 0.137);
+}
 
 /* Sidebar */
-nav.sidebar{
-    margin-top: 5px;
+nav.sidebar {
     background-color: #202021;
     width: 300px;
     height: 100%;
@@ -180,206 +196,188 @@ nav.sidebar{
     margin-top: 90px;
 }
 
-nav.sidebar .nav_top ul{
+nav.sidebar .nav_top ul {
     padding: 0;
     margin: 0;
     height: 100%;
 }
 
-nav.sidebar .nav_top ul li{
+nav.sidebar .nav_top ul li {
     display: flex;
     align-items: center;
     height: 60px;
     cursor: pointer;
     margin-bottom: 10px;
 }
-    /* li.active*/
-    nav.sidebar .nav_top ul li.active{
-        background-color: #366D4F;
-    }
 
-    /* li.active -> a */
-    nav.sidebar .nav_top ul li.active a{
-        color: #FEFEFE;
-    }
+nav.sidebar .nav_top ul li.active {
+    background-color: #366D4F;
+}
 
-    /* li:hover */
-    nav.sidebar .nav_top ul li:hover{
-        background-color: #414142;
-    }
-
-    /* li.active:hover */
-    nav.sidebar .nav_top ul li.active:hover{
-        background-color: #366D4F;
-    }
-
-nav.sidebar .nav_top ul li a{
+nav.sidebar .nav_top ul li.active a {
     color: #FEFEFE;
+}
+
+nav.sidebar .nav_top ul li:hover {
+    background-color: #414142;
+}
+
+nav.sidebar .nav_top ul li.active:hover {
+    background-color: #366D4F;
+}
+
+nav.sidebar .nav_top ul li a {
     text-decoration: none;
     margin-left: 50px;
     color: #77767B;
 }
 
-nav.sidebar .nav_top ul li a i{
+nav.sidebar .nav_top ul li a i {
     margin-right: 20px;
 }
 
 /* Section */
-section{
+section {
     padding: 90px 0 0 300px;
     height: 100%;
-    width: 80%;
+    width: calc(100% - 300px);
 }
 
-    /* Categories */
-    section .categories{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding-left: 50px;
-    }
+section .categories {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+}
 
-    section .categories .categories_title{
-        display: flex;
-        align-items: center;
-        
-    }
+section .categories .categories_title {
+    display: flex;
+    align-items: center;
+}
 
-    section .categories .categories_title h2 i{
-        margin-right: 15px;
-        font-size: 20px;
-    }
+section .categories .categories_title h2 i {
+    margin-right: 15px;
+    font-size: 20px;
+}
 
-    section .categories .categories_title button{
-        margin-left: 15px;
-        background: transparent;
-        color: #FEFEFE;
-        font-size: 18px;
-        border: none;
-        cursor: pointer;
-        font-size: 20px;
-    }
+section .categories .categories_title button {
+    margin-left: 15px;
+    background: transparent;
+    color: #FEFEFE;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
 
-    section .categories .categories_title button i.fa-chevron-down{
-        display: none;
-    }   
+section .categories .categories_title button i.fa-chevron-down {
+    display: none;
+}
 
-        /* h2 -> size */
-        section h2{
-            font-size: 20px;
-        }
+section h2 {
+    font-size: 20px;
+}
 
-        /* Categories Tags*/
-        section .categories ul.tags{
-            margin: 0;
-        }
+section .categories ul.tags {
+    margin: 0;
+}
 
-        section .categories ul.tags button{
-            width: 150px;
-            height: 35px;
-            margin-right: 25px;
-            border-radius: 25px;
-            background-color: #202021;
-            border: none;
-            color: #FEFEFE;
-            cursor: pointer;
-        }
+section .categories ul.tags button {
+    width: 150px;
+    height: 35px;
+    margin-right: 25px;
+    border-radius: 25px;
+    background-color: #202021;
+    border: none;
+    color: #FEFEFE;
+    cursor: pointer;
+}
 
-            /* button:hover */
-            section .categories ul.tags button:hover{
-                background-color: rgba(75, 145, 104, 0.137);
-                border: solid #366D4F 3px;
-            }
-    
-    /* Movies Categories */
-    section .movies_categories{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding-left: 50px;
-    }
+section .categories ul.tags button:hover {
+    background-color: rgba(75, 145, 104, 0.137);
+    border: solid #366D4F 3px;
+}
 
-        /* Categories Title */
-        section .movies_categories .title{
-            display: flex;
-            align-items: center;
-        }
+section .movies_categories {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+}
 
-        section .movies_categories .title button{
-            margin-left: 15px;
-            background: transparent;
-            color: #FEFEFE;
-            font-size: 18px;
-            border: none;
-            cursor: pointer;
-            font-size: 20px;
-        }
+section .movies_categories .title {
+    display: flex;
+    align-items: center;
+}
 
-        section .movies_categories .title button i.fa-chevron-down{
-            display: none;
-        }
+section .movies_categories .title button {
+    margin-left: 15px;
+    background: transparent;
+    color: #FEFEFE;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
 
-        section .movies_categories .title i{
-            margin-right: 15px;
-            font-size: 20px;
-        }
+section .movies_categories .title button i.fa-chevron-down {
+    display: none;
+}
 
-        /* Movies Cards */
-        section ul{
-            display: flex;
-        }
+section .movies_categories .title i {
+    margin-right: 15px;
+    font-size: 20px;
+}
 
-        section ul .movies_card{
-            width: 250px;
-            min-width: 250px;
-            height: 320px;
-            background-color: #202021;
-            border-radius: 15px;
-            margin-right: 25px;
-        }
-        #img0, #img1,#img2,#img3,#img4,#img5{
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-        }
+section ul {
+    display: flex;
+}
 
-        section ul .load_card{
-            width: 250px;
-            height: 320px;
-            background-color: #20202179;
-            border-radius: 15px;
-            margin-right: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            border: solid transparent 3px;
-        }
+section ul .movies_card {
+    width: 250px;
+    min-width: 250px;
+    height: 320px;
+    background-color: #202021;
+    border-radius: 15px;
+    margin-right: 25px;
+}
 
-        section ul .load_card i{
-            background-color: #202021;
-            padding: 30px;
-            border-radius: 50px;
-            color: #77767B;
-            cursor: pointer;
-            font-size: 32px;
-        }
+#img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
 
-            /* load_card -> hover */
-            /*section ul .load_card:hover{
-                background-color: rgba(75, 145, 104, 0.137);
-                border: solid #366D4F 3px;
-            }*/
+section ul .load_card {
+    width: 250px;
+    height: 320px;
+    background-color: #20202179;
+    border-radius: 15px;
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: solid transparent 3px;
+}
 
-            section ul .load_card i:hover{
-                border: solid #366D4F 3px;
-            }
+section ul .load_card i {
+    background-color: #202021;
+    padding: 30px;
+    border-radius: 50px;
+    color: #77767B;
+    cursor: pointer;
+    font-size: 32px;
+}
 
-    #ul_explore{
-        display: none;
-    }
+section ul .load_card i:hover {
+    border: solid #366D4F 3px;
+}
 
-/* Container for video page */
+#ul_explore {
+    display: none;
+}
+
 .video-container {
     text-align: center;
     padding: 20px;
@@ -414,7 +412,7 @@ section{
 .iframe-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 ratio */
+    padding-bottom: 56.25%;
     height: 0;
     border-radius: 10px;
     overflow: hidden;
@@ -435,27 +433,45 @@ section{
     margin-top: 20px;
 }
 
-
 /* Additional responsive design */
-@media (max-width: 768px) {
-    .video-container h1#titre {
-        font-size: 24px;
+@media (max-width: 1600px) {
+    section {
+        padding: 90px 0 0 250px;
+        width: calc(100% - 250px);
     }
 
-    .selectors select {
-        width: 150px;
-        height: 30px;
-        margin: 0 5px;
-    }
-
-    .video-container h3#desc {
-        font-size: 16px;
+    nav.sidebar {
+        width: 250px;
     }
 }
 
+@media (max-width: 1300px) {
+    section {
+        padding: 90px 0 0 200px;
+        width: calc(100% - 200px);
+    }
 
-@media (max-width: 768px) {
-    #ann_1325{
+    nav.sidebar {
+        width: 200px;
+    }
+}
+
+@media (max-width: 750px) {
+    nav.navbar .nav_left, nav.navbar .nav_right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav.navbar .nav_right input {
+        width: 300px;
+    }
+
+    nav.sidebar {
         display: none;
     }
-}
+
+    section {
+        padding: 90px 0 0 0;
+        width: 100%;
+    }
+
