@@ -439,6 +439,16 @@ section{
     margin-top: 20px;
 }
 
+.continue{
+    width: calc(100% - 180px);
+}
+.news{
+    width: calc(100% - 180px);
+}
+.trending{
+    width: calc(100% - 180px);
+}
+
 
 /* Additional responsive design */
 @media (max-width: 768px) {
