@@ -301,7 +301,6 @@ section{
         display: flex;
         flex-direction: column;
         padding-left: 50px;
-        width: calc(100% - 180px);
     }
 
         /* Categories Title */
@@ -497,6 +496,9 @@ section{
     }
     section ul {
         width: 100%;
+    }
+    section .movies_categories {
+        width: calc(100% - 180px);
     }
 }
 
