@@ -855,38 +855,34 @@ async function change(x, saison) {
 // Fonction pour ajouter les movie cards dans le catalogue
 async function populateCatalogue() {
     try {
-        const movies = await getAllMovies(); // Fonction hypothétique pour récupérer tous les films
+        const movies = await getAllMovies(); // Supposons que getAllMovies() récupère tous les films
 
         const catalogueDiv = document.getElementById("cata");
 
         movies.forEach((movie, index) => {
-            // Création des éléments nécessaires
-            const movies = movie[index-1];
-
+            // Création des éléments nécessaires pour chaque film
             var nouvelleDiv = document.createElement("div");
-            var nouveauxLink = document.createElement("a");
-            var nouvelleimage = document.createElement("img");
-    
             nouvelleDiv.className = "movies_card";
+
+            var nouveauxLink = document.createElement("a");
             nouveauxLink.href = "html/viewVideo.html";
             nouveauxLink.className = "film";
-            nouvelleDiv.id = "Catalogue"+ (index-1);
-            nouveauxLink.dataset.tag = movies.tag;
-            nouvelleimage.src = movies.image;
-            nouvelleimage.id = "img";
+            nouveauxLink.dataset.tag = movie.tag; // Assurez-vous d'avoir un attribut 'tag' dans votre objet movie
             nouveauxLink.onclick = function () {
-                videoView(movies.titre,movies.link, movies.description, movies.tag, movies.episode, movies.saison);
+                videoView(movie.titre, movie.link, movie.description, movie.tag, movie.episode, movie.saison);
             };
-    
-            document.getElementById("cata").appendChild(nouvelleDiv);
-            nouvelleDiv.appendChild(nouveauxLink);
+
+            var nouvelleimage = document.createElement("img");
+            nouvelleimage.src = movie.image; // Assurez-vous d'avoir une propriété 'image' dans votre objet movie
+            nouvelleimage.alt = movie.titre; // Texte alternatif pour l'image
+
+            // Construction de la structure HTML
             nouveauxLink.appendChild(nouvelleimage);
+            nouvelleDiv.appendChild(nouveauxLink);
+            catalogueDiv.appendChild(nouvelleDiv);
         });
     } catch (error) {
         console.error("Une erreur s'est produite lors du peuplement du catalogue :", error);
         alert("Erreur: " + error.message); // Afficher le message d'erreur
     }
 }
-
-// Appel de la fonction pour peupler le catalogue lors du chargement de la page
-populateCatalogue();
