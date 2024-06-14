@@ -486,6 +486,15 @@ section{
     #ul_explore{
         overflow: auto hidden;
     }
+    .continue{
+        width: 100%;
+    }
+    .news{
+        width: 100%;
+    }
+    .trending{
+        width: 100%;
+    }
 }
 
 @media (max-width: 750px) {
