@@ -892,6 +892,7 @@ async function populateCatalogue() {
 
 
 function clickMenu() {
+    alert("lala");
     if (document.getElementById("sidebar").style.display == "none") {
         alert("ouvert");
         document.getElementById("sidebar").style.display = "flex";
