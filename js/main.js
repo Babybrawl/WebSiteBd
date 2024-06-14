@@ -890,7 +890,7 @@ async function populateCatalogue() {
     }
 }
 
-let open = 0;
+let open = 0; // Déclaration correcte de la variable en dehors de la fonction
 function clickMenu() {
     if (open === 0) {
         open = 1;
