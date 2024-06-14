@@ -272,12 +272,15 @@ section{
         /* Categories Tags*/
         section .categories ul.tags{
             margin: 0;
+            flex-wrap: wrap;
+            margin-right: 50px;
         }
 
         section .categories ul.tags button{
             width: 150px;
             height: 35px;
             margin-right: 25px;
+            margin-bottom: 20px;
             border-radius: 25px;
             background-color: #202021;
             border: none;
@@ -470,10 +473,5 @@ section{
     }
     nav.sidebar{
         display: none;
-    }
-}
-@media (max-width: 400px) {
-    body{
-        width: 180%;
     }
 }
