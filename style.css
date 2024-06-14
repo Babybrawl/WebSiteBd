@@ -452,7 +452,7 @@ section{
 }
 
 
-/* Additional responsive design */
+/* Media Query pour les écrans jusqu'à 768px de large */
 @media (max-width: 768px) {
     .video-container h1#titre {
         font-size: 24px;
@@ -468,61 +468,70 @@ section{
         font-size: 16px;
     }
 }
+
+/* Media Query pour les écrans jusqu'à 1300px de large */
 @media (max-width: 1300px) {
-    section .categories ul.tags{
+    section .categories ul.tags {
         margin-right: 100px;
     }
 }
+
+/* Media Query pour les écrans jusqu'à 1600px de large */
 @media (max-width: 1600px) {
-    .continue{
+    /* Styles pour les éléments avec la classe .continue, .news, .trending */
+    .continue, .news, .trending {
         width: 100%;
     }
-    .news{
-        width: 100%;
+
+    /* Styles pour les éléments avec les ID ul_continue, ul_news, ul_trending, ul_explore */
+    #ul_continue, #ul_news, #ul_trending, #ul_explore {
+        overflow: auto;
+        /* Vous ne pouvez pas combiner 'overflow: auto' et 'hidden' comme ceci. */
+        overflow-x: hidden;
     }
-    .trending{
-        width: 100%;
-    }
-    #ul_continue{
-        overflow: auto hidden;
-    }
-    #ul_news{
-        overflow: auto hidden;
-    }
-    #ul_trending{
-        overflow: auto hidden;
-    }
-    #ul_explore{
-        overflow: auto hidden;
-    }
+
+    /* Styles pour les éléments ul à l'intérieur de sections */
     section ul {
         width: 80%;
     }
+
+    /* Styles pour les éléments avec la classe .movies_categories */
     section .movies_categories {
-        width: calc(100% - 180px);
+        width: calc(100% - 180px); /* Calcul de la largeur moins 180px */
     }
 }
-@media (max-width: 1300px){
+
+/* Media Query pour les écrans jusqu'à 1300px de large */
+@media (max-width: 1300px) {
     section ul {
         width: 75%;
     }
 }
+
+/* Media Query pour les écrans jusqu'à 1050px de large */
 @media (max-width: 1050px) {
     section ul {
         width: 70%;
     }
 }
+
+/* Media Query pour les écrans jusqu'à 950px de large */
 @media (max-width: 950px) {
-    section{
+    /* Styles pour les éléments section */
+    section {
         padding: 90px 0 0 0;
     }
-    section .movies_categories{
+
+    /* Styles pour les éléments avec la classe .movies_categories */
+    section .movies_categories {
         width: 100%;
         display: flex;
         flex-direction: column;
         padding-left: 35px;
     }
-    nav.sidebar{
+
+    /* Styles pour les éléments nav avec la classe sidebar */
+    nav.sidebar {
         display: none;
     }
 }
