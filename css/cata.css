@@ -24,7 +24,7 @@ body {
     top: 60px; /* Ajustez selon la hauteur de votre navbar */
     left: 0;
     width: 200px; /* Ajustez selon la largeur de votre sidebar */
-    height: calc(100% - 8%); /* Ajustez selon la hauteur de votre navbar */
+    height: calc(100% - 1%); /* Ajustez selon la hauteur de votre navbar */
     background-color: #222;
     color: #fff;
     z-index: 900; /* S'assure que la sidebar est au-dessus du contenu mais en dessous de la navbar */
@@ -38,7 +38,7 @@ body {
     flex-wrap: wrap;
     gap: 20px; /* espace entre les cartes */
     padding: 20px; /* espace autour des cartes */
-    margin-left: 220px; /* Largeur de la sidebar + un peu de marge */
+    margin-left: 350px; /* Largeur de la sidebar + un peu de marge */
     margin-top: 80px; /* Hauteur de la navbar + un peu de marge */
     justify-content: center; /* centre les cartes horizontalement */
 }
