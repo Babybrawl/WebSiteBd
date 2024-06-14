@@ -892,11 +892,9 @@ async function populateCatalogue() {
 
 
 function clickMenu() {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.classList.toggle("active");
-    if (document.getElementById("sidebar").style.display == "none") {
-        document.getElementById("sidebar").style.display = "flex";
+    if (document.getElementById("sidebar").style.marginLeft == "-250px") {
+        document.getElementById("sidebar").style.marginLeft = "0px";
     } else {
-        document.getElementById("sidebar").style.display = "none";
+        document.getElementById("sidebar").style.marginLeft = "-250px";
     }
 }

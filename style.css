@@ -178,12 +178,8 @@ nav.sidebar{
     justify-content: space-between;
     padding-top: 50px;
     margin-top: 83.4px;
-    transition: transform 0.3s ease; /* Ajout de la transition */
-    transform: translateX(-100%); /* Masquer la barre latérale initialement */
-}
-
-nav.sidebar.active {
-    transform: translateX(0); /* Afficher la barre latérale lorsque active */
+    transition: 1s ease; /* Ajout de la transition */
+    margin-left: -250px;
 }
 
 nav.sidebar .nav_top ul{
