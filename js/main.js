@@ -895,7 +895,7 @@ function clickMenu() {
     const sidebar = document.getElementById("sidebar");
     if (sidebar.style.display === "flex") {
         sidebar.style.display = "none";
-    } else {
+    }else if (sidebar.style.display === "none") {
         sidebar.style.display = "flex";
     }
 }
