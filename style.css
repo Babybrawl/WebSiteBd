@@ -472,16 +472,28 @@ section{
     section .categories ul.tags{
         margin-right: 100px;
     }
+    .continue{
+        width: 75%;
+    }
+    .news{
+        width: 75%;
+    }
+    .trending{
+        width: 75%;
+    }
+    section ul {
+        width: 75%;
+    }
 }
 @media (max-width: 1600px) {
     .continue{
-        width: 100%;
+        width: 80%;
     }
     .news{
-        width: 100%;
+        width: 80%;
     }
     .trending{
-        width: 100%;
+        width: 80%;
     }
     #ul_continue{
         overflow: auto hidden;
@@ -496,14 +508,27 @@ section{
         overflow: auto hidden;
     }
     section ul {
-        width: 100%;
+        width: 80%;
     }
     section .movies_categories {
         width: calc(100% - 180px);
     }
 }
-
-@media (max-width: 750px) {
+@media (max-width: 1050px) {
+    .continue{
+        width: 70%,
+    }
+    .news{
+        width: 70%;
+    }
+    .trending{
+        width: 70%;
+    }
+    section ul {
+        width: 70%;
+    }
+}
+@media (max-width: 950px) {
     section{
         padding: 90px 0 0 0;
     }
