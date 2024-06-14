@@ -7,6 +7,9 @@ html{
 #ann_1325{
     display: none;
 }
+body{
+    width: calc(100% - 180px);
+}
 /*
 .hidden {
     display: none;
@@ -330,7 +333,6 @@ section{
         /* Movies Cards */
         section ul{
             display: flex;
-            width: calc(100% - 180px);
         }
 
         section ul .movies_card{
