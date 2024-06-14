@@ -178,6 +178,7 @@ nav.sidebar{
     justify-content: space-between;
     padding-top: 50px;
     margin-top: 83.4px;
+    transition: 1s ease;
 }
 
 nav.sidebar .nav_top ul{
