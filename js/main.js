@@ -892,7 +892,7 @@ async function populateCatalogue() {
 
 
 function clickMenu() {
-    if (document.getElementById("sidebar").style.display == "none") {
+    if (document.getElementById("sidebar").style.display == "flex") {
         document.getElementById("sidebar").style.display = "none";
     } else {
         document.getElementById("sidebar").style.display = "flex";
