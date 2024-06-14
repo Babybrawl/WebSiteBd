@@ -75,10 +75,11 @@ body {
 }
 
 @media (max-width: 750px) {
+    #cata{
+        margin-left: 0;
+    }
+    
     nav.sidebar {
         display: none;
-    }
-    #cata{
-        margin-left: 20px;
     }
 }
