@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Ajustez selon la hauteur de votre navbar */
+    background-color: #333;
+    color: #fff;
+    z-index: 1000; /* S'assure que la navbar est au-dessus de tout le reste */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 60px; /* Ajustez selon la hauteur de votre navbar */
+    left: 0;
+    width: 200px; /* Ajustez selon la largeur de votre sidebar */
+    height: calc(100% - 60px); /* Ajustez selon la hauteur de votre navbar */
+    background-color: #222;
+    color: #fff;
+    z-index: 900; /* S'assure que la sidebar est au-dessus du contenu mais en dessous de la navbar */
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+#cata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* espace entre les cartes */
+    padding: 20px; /* espace autour des cartes */
+    margin-left: 220px; /* Largeur de la sidebar + un peu de marge */
+    margin-top: 80px; /* Hauteur de la navbar + un peu de marge */
+    justify-content: center; /* centre les cartes horizontalement */
+}
+
+.movies_card {
+    flex: 0 1 calc(25% - 20px); /* chaque carte occupe environ 25% de la largeur du conteneur */
+    box-sizing: border-box; /* inclut le padding et la bordure dans la largeur totale */
+    display: flex;
+    flex-direction: column; /* permet à l'image et aux autres éléments d'être en colonne */
+    align-items: center; /* centre les éléments horizontalement */
+    margin-bottom: 20px; /* espace en bas de chaque carte */
+}
+
+.movies_card img {
+    width: 100%; /* l'image prend toute la largeur de la carte */
+    height: auto; /* hauteur automatique pour maintenir le ratio d'aspect */
+    border-radius: 8px; /* coins arrondis pour l'image */
+}
+
+@media (max-width: 1200px) {
+    .movies_card {
+        flex: 0 1 calc(33.33% - 20px); /* 3 cartes par ligne sur les écrans plus petits */
+    }
+}
+
+@media (max-width: 992px) {
+    .movies_card {
+        flex: 0 1 calc(50% - 20px); /* 2 cartes par ligne sur les écrans encore plus petits */
+    }
+}
+
+@media (max-width: 768px) {
+    .movies_card {
+        flex: 0 1 calc(100% - 20px); /* 1 carte par ligne sur les petits écrans */
+    }
+}
