@@ -869,7 +869,12 @@ async function populateCatalogue() {
             nouveauxLink.className = "film";
             nouvelleDiv.id = "Catalogue" + index;
             nouveauxLink.dataset.tag = movie.tag;
-            nouvelleimage.src = "../" + movie.image;
+            if(movie.image.indexOf("image/") > -1){
+                nouvelleimage.src = "../" + movie.image;
+            }else{
+                nouvelleimage.src = movie.image;
+            }
+            
             nouvelleimage.id = "img";
             nouveauxLink.onclick = function () {
                 videoView(movie.titre, movie.link, movie.description, movie.tag, movie.episode, movie.saison);
