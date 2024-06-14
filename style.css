@@ -169,16 +169,15 @@ nav.navbar .nav_right button{
 
 /* Sidebar */
 nav.sidebar{
-    margin-top: 5px;
     background-color: #202021;
-    width: 300px;
+    width: 250px;
     height: 100%;
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-top: 50px;
-    margin-top: 90px;
+    margin-top: 83.4px;
 }
 
 nav.sidebar .nav_top ul{
