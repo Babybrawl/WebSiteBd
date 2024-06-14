@@ -14,24 +14,12 @@
             <select id="serie"></select>
             <select id="saison"></select>
         </div>
-        <iframe width="765" height="435" src="" scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen="" id="video"></iframe>
+        <div class="iframe-container">
+            <iframe id="video" src="" scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen=""></iframe>
+        </div>
         <h3 id="desc">Description</h3>
     </div>
 
     <script src="../js/main.js"></script> <!-- Load JS -->
-    <script>
-        // Attendre que l'iframe soit complètement chargé
-        document.getElementById('video').onload = function() {
-            // Accéder au document de l'iframe
-            var iframe = document.getElementById('video');
-            var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-
-            // Sélectionner l'élément avec l'ID ann_1325 et le masquer
-            var element = iframeDocument.getElementById('ann_1325');
-            if (element) {
-                element.style.display = 'none';
-            }
-        };
-    </script>
 </body>
 </html>
