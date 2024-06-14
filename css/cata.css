@@ -53,11 +53,14 @@ body {
     flex-direction: column; /* permet à l'image et aux autres éléments d'être en colonne */
     align-items: center; /* centre les éléments horizontalement */
     margin-bottom: 20px; /* espace en bas de chaque carte */
+    display: flex; /* ajoute flex pour centrer les éléments correctement */
 }
-#img{
+
+#cata .movies_card img {
     width: 100%;
     height: 100%;
     border-radius: 15px;
+    object-fit: cover; /* ajuste l'image pour qu'elle garde ses proportions */
 }
 
 @media (max-width: 1200px) {
