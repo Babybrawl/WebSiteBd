@@ -851,3 +851,43 @@ async function change(x, saison) {
         alert("Erreur: " + error.message); // Afficher le message d'erreur
     }
 }
+
+// Fonction pour ajouter les movie cards dans le catalogue
+async function populateCatalogue() {
+    try {
+        const movies = await getAllMovies(); // Fonction hypothétique pour récupérer tous les films
+
+        const catalogueDiv = document.getElementById("cata");
+
+        movies.forEach((movie, index) => {
+            // Création des éléments nécessaires
+            let movieCardDiv = document.createElement("div");
+            movieCardDiv.classList.add("movies_card");
+
+            let movieLink = document.createElement("a");
+            movieLink.href = movie.link; // URL de la page de visualisation du film
+            movieLink.classList.add("film");
+            movieLink.dataset.tag = movie.tag; // Tag du film
+
+            let movieImage = document.createElement("img");
+            movieImage.src = movie.image; // URL de l'image représentant le film
+            movieImage.alt = movie.titre; // Texte alternatif pour l'image
+
+            // Gestion de l'événement au clic sur le lien
+            movieLink.addEventListener("click", () => {
+                videoView(movie.titre, movie.link, movie.description, movie.tag, movie.episode, movie.saison);
+            });
+
+            // Ajout des éléments dans le DOM
+            movieLink.appendChild(movieImage);
+            movieCardDiv.appendChild(movieLink);
+            catalogueDiv.appendChild(movieCardDiv);
+        });
+    } catch (error) {
+        console.error("Une erreur s'est produite lors du peuplement du catalogue :", error);
+        alert("Erreur: " + error.message); // Afficher le message d'erreur
+    }
+}
+
+// Appel de la fonction pour peupler le catalogue lors du chargement de la page
+populateCatalogue();
