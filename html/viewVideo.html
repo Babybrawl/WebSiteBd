@@ -4,63 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/viewVideo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Lecture Vidéo</title>
 </head>
-<body>
+<body onload="setTimeout(start(), 1000);">
 
-<!-- Navbar -->
-<nav class="navbar">
-    <div class="nav_left">
-        <img src="img/logo.png" alt="Logo">
-        <h1>Website</h1>
-    </div>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav_left">
+                <img src="img/logo.png">
+                <h1>Website</h1>
+            </div>
+    
+            <div class="nav_right">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <ul>
+                    <input type="search" placeholder="search" id="search_bar" oninput="search()">
+                    <div id="recherche"></div>
+                </ul>
+    
+                <ul>
+                <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
+                <div id="rechercheTag">
+                    <button id="action" onclick="searchTag('none')">None</button>
+                    <button id="action" onclick="searchTag('action')">Action</button>
+                    <button id="action" onclick="searchTag('horreur')">Horreur</button>
+                    <button id="action" onclick="searchTag('comedie')">Comédie</button>
+                    <button id="action" onclick="searchTag('romantiques/drama')">romantiques/drama</button>
+                    <button id="action" onclick="searchTag('sf')">science-fiction</button>
+                </div>
+                </ul>
+    
+            </div>
+        </nav>
+    
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="nav_top">
+                <ul>
+                    <li class="active"><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="#popular"><i class="fa-solid fa-fire"></i>Popular</a></li>
+                    <li><a href="#favorites"><i class="fa-solid fa-star"></i> Favorites</a></li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : 'a8537e81a72deaee9e578b12150fe79b',
+                    'format' : 'iframe',
+                    'height' : 300,
+                    'width' : 160,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/a8537e81a72deaee9e578b12150fe79b/invoke.js"></script>
+            <div class="nav_bottom">
+    
+            </div>
+        </nav>
 
-    <div class="nav_right">
-        <i class="fas fa-search"></i>
-        <input type="search" placeholder="search" id="search_bar" oninput="search()">
-        <div id="recherche"></div>
-
-        <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
-        <div id="rechercheTag">
-            <button class="action" onclick="searchTag('none')">None</button>
-            <button class="action" onclick="searchTag('action')">Action</button>
-            <button class="action" onclick="searchTag('horreur')">Horreur</button>
-            <button class="action" onclick="searchTag('comedie')">Comédie</button>
-            <button class="action" onclick="searchTag('romantiques/drama')">Romantiques/Drama</button>
-            <button class="action" onclick="searchTag('sf')">Science-fiction</button>
-        </div>
-    </div>
-</nav>
-
-<!-- Sidebar -->
-<nav class="sidebar">
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-    <div class="nav_top">
-        <ul>
-            <li class="active"><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#popular"><i class="fas fa-fire"></i> Popular</a></li>
-            <li><a href="#favorites"><i class="fas fa-star"></i> Favorites</a></li>
-        </ul>
-    </div>
-    <div class="nav_bottom">
-        <script type="text/javascript">
-            atOptions = {
-                'key' : 'a8537e81a72deaee9e578b12150fe79b',
-                'format' : 'iframe',
-                'height' : 300,
-                'width' : 160,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.topcreativeformat.com/a8537e81a72deaee9e578b12150fe79b/invoke.js"></script>
-    </div>
-</nav>
-
-<!-- Main Content -->
-<div class="content">
     <div class="video-container">
-        <h1 id="titre">Titre de la Vidéo</h1>
+        <h1 id="titre">TITRE</h1>
         <div class="selectors">
             <select id="serie"></select>
             <select id="saison"></select>
@@ -70,24 +72,7 @@
         </div>
         <h3 id="desc">Description</h3>
     </div>
-</div>
 
-<script src="../js/main.js"></script> <!-- Load JS -->
-<script>
-    // JavaScript for Sidebar Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const sidebar = document.querySelector('.sidebar');
-
-    menuToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
-            sidebar.classList.remove('active');
-        }
-    });
-</script>
-
+    <script src="../js/main.js"></script> <!-- Load JS -->
 </body>
 </html>
