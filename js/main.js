@@ -893,8 +893,10 @@ async function populateCatalogue() {
 
 function clickMenu() {
     if (document.getElementById("sidebar").style.display == "none") {
+        alert("ouvert");
         document.getElementById("sidebar").style.display = "flex";
     } else {
+        alert("fermer");
         document.getElementById("sidebar").style.display = "none";
     }
 }
