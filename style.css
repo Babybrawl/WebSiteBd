@@ -485,8 +485,7 @@ section{
 
     /* Styles pour les éléments avec les ID ul_continue, ul_news, ul_trending, ul_explore */
     #ul_continue, #ul_news, #ul_trending, #ul_explore {
-        overflow: auto;
-        overflow-x: hidden; /* Correction de la syntaxe overflow */
+        overflow: auto hidden;
     }
 
     /* Styles pour les éléments ul à l'intérieur de sections */
@@ -511,6 +510,25 @@ section{
 @media (max-width: 1050px) {
     section ul {
         width: 70%;
+    }
+}
+
+/* Media Query pour les écrans jusqu'à 1000px de large */
+@media (max-width: 1050px) {
+    #search_bar{
+        width: 300px;
+    }
+    #recherche{
+        width: 300px;
+    }
+}
+
+@media (max-width: 900px) {
+    #WebsiteH1{
+        display: none;
+    }
+    nav.navbar .nav_left {
+        width: auto;
     }
 }
 
@@ -545,10 +563,35 @@ section{
     }
 }
 
+@media (max-width: 680px) {
+    #search_bar{
+        width: 150px;
+    }
+    #recherche{
+        width: 150px;
+    }
+    #CategoriesTag{
+        margin-left: -40px;
+    }
+}
+
 /* Media Query pour les écrans jusqu'à 650px de large */
 @media (max-width: 650px) {
     /* Styles spécifiques pour la largeur des ul à 650px */
     section ul {
-        width: 87%;
+        width: 80%;
+    }
+}
+
+@media (max-width: 490px) {
+    /* Styles spécifiques pour la largeur des ul à 650px */
+    #logoPng{
+        display: none;
+    }
+}
+@media (max-width: 410px) {
+    /* Styles spécifiques pour la largeur des ul à 650px */
+    nav.navbar {
+        padding: 0;
     }
 }
