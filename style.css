@@ -384,16 +384,15 @@ section{
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    width: 90%;
-    max-width: 1000px;
+    margin: 0 auto;
+    max-width: 800px;
     background-color: #202021;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    overflow: auto;
-    height: 90vh;
+    margin-top: 50px;
 }
 
 .video-container h1#titre {
-    font-size: 24px;
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
@@ -438,12 +437,8 @@ section{
 
 /* Additional responsive design */
 @media (max-width: 768px) {
-    .video-container {
-        padding: 10px;
-    }
-
     .video-container h1#titre {
-        font-size: 18px;
+        font-size: 24px;
     }
 
     .selectors select {
@@ -453,11 +448,7 @@ section{
     }
 
     .video-container h3#desc {
-        font-size: 14px;
-    }
-
-    .iframe-container {
-        width: 100%; /* Réduire la taille de l'iframe sur les petits écrans */
+        font-size: 16px;
     }
 }
 
