@@ -1,4 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4B9168; /* Couleur de la poignée */
+    border-radius: 6px; /* Bord arrondi de la poignée */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #202021; /* Couleur de la piste de défilement */
+}
+
+/* Firefox */
+/* Notez que Firefox utilise une approche différente et nécessite une propriété spécifique */
+/* Dans ce cas, nous utilisons la couleur pour la barre et la piste de défilement */
+* {
+    scrollbar-color: #4B9168 #202021;
+}
+
+/* Edge et IE */
+/* Notez que Edge et IE utilisent une approche différente et nécessitent des propriétés spécifiques */
+/* Dans ce cas, nous utilisons la couleur pour la poignée et la piste de défilement */
+* {
+    scrollbar-face-color: #4B9168; /* Couleur de la poignée */
+    scrollbar-track-color: #202021; /* Couleur de la piste de défilement */
+}
 
 /* Reset and basic styles */
 html, body {
