@@ -861,27 +861,26 @@ async function populateCatalogue() {
 
         movies.forEach((movie, index) => {
             // Création des éléments nécessaires
-            let movieCardDiv = document.createElement("div");
-            movieCardDiv.classList.add("movies_card");
+            const movies = movie[index-1];
 
-            let movieLink = document.createElement("a");
-            movieLink.href = movie.link; // URL de la page de visualisation du film
-            movieLink.classList.add("film");
-            movieLink.dataset.tag = movie.tag; // Tag du film
-
-            let movieImage = document.createElement("img");
-            movieImage.src = movie.image; // URL de l'image représentant le film
-            movieImage.alt = movie.titre; // Texte alternatif pour l'image
-
-            // Gestion de l'événement au clic sur le lien
-            movieLink.addEventListener("click", () => {
-                videoView(movie.titre, movie.link, movie.description, movie.tag, movie.episode, movie.saison);
-            });
-
-            // Ajout des éléments dans le DOM
-            movieLink.appendChild(movieImage);
-            movieCardDiv.appendChild(movieLink);
-            catalogueDiv.appendChild(movieCardDiv);
+            var nouvelleDiv = document.createElement("div");
+            var nouveauxLink = document.createElement("a");
+            var nouvelleimage = document.createElement("img");
+    
+            nouvelleDiv.className = "movies_card";
+            nouveauxLink.href = "html/viewVideo.html";
+            nouveauxLink.className = "film";
+            nouvelleDiv.id = "Catalogue"+ (l-1);
+            nouveauxLink.dataset.tag = tag;
+            nouvelleimage.src = movies.image;
+            nouvelleimage.id = "img";
+            nouveauxLink.onclick = function () {
+                videoView(movies.titre,movies.link, movies.description, movies.tag, movies.episode, movies.saison);
+            };
+    
+            document.getElementById("cata").appendChild(nouvelleDiv);
+            nouvelleDiv.appendChild(nouveauxLink);
+            nouveauxLink.appendChild(nouvelleimage);
         });
     } catch (error) {
         console.error("Une erreur s'est produite lors du peuplement du catalogue :", error);
