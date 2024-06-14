@@ -78,4 +78,7 @@ body {
     nav.sidebar {
         display: none;
     }
+    #cata{
+        margin-left: 20px;
+    }
 }
