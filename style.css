@@ -378,6 +378,7 @@ section{
     #ul_explore{
         display: none;
     }
+
 /* Container for video page */
 .video-container {
     text-align: center;
@@ -412,7 +413,9 @@ section{
 
 .iframe-container {
     position: relative;
-    width: 100%;
+    width: 80%;
+    max-width: 765px; /* Taille maximale de l'iframe */
+    margin: 0 auto;
     padding-bottom: 56.25%; /* 16:9 ratio */
     height: 0;
     border-radius: 10px;
@@ -452,6 +455,10 @@ section{
 
     .video-container h3#desc {
         font-size: 16px;
+    }
+
+    .iframe-container {
+        width: 90%; /* Réduire la taille de l'iframe sur les petits écrans */
     }
 }
 
