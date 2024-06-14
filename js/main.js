@@ -890,13 +890,11 @@ async function populateCatalogue() {
     }
 }
 
-let open = 0; // Déclaration correcte de la variable en dehors de la fonction
+
 function clickMenu() {
-    if (open === 0) {
-        open = 1;
+    if (document.getElementById("sidebar").style.display == "none") {
         document.getElementById("sidebar").style.display = "flex";
     } else {
-        open = 0;
         document.getElementById("sidebar").style.display = "none";
     }
 }
