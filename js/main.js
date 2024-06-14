@@ -870,7 +870,7 @@ async function populateCatalogue() {
             nouvelleDiv.className = "movies_card";
             nouveauxLink.href = "html/viewVideo.html";
             nouveauxLink.className = "film";
-            nouvelleDiv.id = "Catalogue"+ (l-1);
+            nouvelleDiv.id = "Catalogue"+ (index-1);
             nouveauxLink.dataset.tag = tag;
             nouvelleimage.src = movies.image;
             nouvelleimage.id = "img";
