@@ -62,14 +62,14 @@ body {
 
 @media (max-width: 1600px) {
     #cata .movies_card {
-        flex: 0 1 30%; /* 3 cartes par ligne */
+        flex: 0 1 250px; /* 3 cartes par ligne */
         margin-right: 1.5%; /* Assure l'espace entre les cartes */
     }
 }
 
 @media (max-width: 1300px) {
     #cata .movies_card {
-        flex: 0 1 45%; /* 2 cartes par ligne */
+        flex: 0 1 250px; /* 2 cartes par ligne */
         margin-right: 2.5%; /* Assure l'espace entre les cartes */
     }
 }
