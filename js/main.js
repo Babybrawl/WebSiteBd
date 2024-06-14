@@ -889,3 +889,14 @@ async function populateCatalogue() {
         alert("Erreur: " + error.message); // Afficher le message d'erreur
     }
 }
+
+let open = 0;
+function clickMenu() {
+    if (open === 0) {
+        open = 1;
+        document.getElementById("sidebar").style.display = "flex";
+    } else {
+        open = 0;
+        document.getElementById("sidebar").style.display = "none";
+    }
+}
