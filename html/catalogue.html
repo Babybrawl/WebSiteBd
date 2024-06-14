@@ -1,75 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="style.css">    <!-- Link main CSS -->
-    <link rel="icon" href="data:," />
-
-    <script src="https://kit.fontawesome.com/3561a4943c.js" crossorigin="anonymous"></script> <!-- Fontawesome Lib -->
-
-    <title>Website - Catalogue </title>
+    <link rel="stylesheet" href="../style.css">
+    <title>Catalogue Vidéos</title>
 </head>
-<body onload="setTimeout(populateCatalogue(), 10);">
+<body onload="populateCatalogue()">
 
-<!-- Navbar -->
-<nav class="navbar">
-    <div class="nav_left">
-        <img src="img/logo.png">
-        <h1>Website</h1>
-    </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav_left">
+            <img src="../img/logo.png" alt="Logo">
+            <h1>Website</h1>
+        </div>
 
-    <div class="nav_right">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <ul>
-            <input type="search" placeholder="search" id="search_bar" oninput="search()">
-            <div id="recherche"></div>
-        </ul>
+        <div class="nav_right">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <ul>
+                <input type="search" placeholder="search" id="search_bar" oninput="search()">
+                <div id="recherche"></div>
+            </ul>
 
-        <ul>
-            <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
-            <div id="rechercheTag">
-                <button id="action" onclick="searchTag('none')">None</button>
-                <button id="action" onclick="searchTag('action')">Action</button>
-                <button id="action" onclick="searchTag('horreur')">Horreur</button>
-                <button id="action" onclick="searchTag('comedie')">Comédie</button>
-                <button id="action" onclick="searchTag('romantiques/drama')">Romantiques/Drama</button>
-                <button id="action" onclick="searchTag('sf')">Science-fiction</button>
-            </div>
-        </ul>
+            <ul>
+                <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
+                <div id="rechercheTag">
+                    <button id="action" onclick="searchTag('none')">None</button>
+                    <button id="action" onclick="searchTag('action')">Action</button>
+                    <button id="action" onclick="searchTag('horreur')">Horreur</button>
+                    <button id="action" onclick="searchTag('comedie')">Comédie</button>
+                    <button id="action" onclick="searchTag('romantiques/drama')">Romantiques/Drama</button>
+                    <button id="action" onclick="searchTag('sf')">Science-Fiction</button>
+                </div>
+            </ul>
+        </div>
+    </nav>
 
-    </div>
-</nav>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="nav_top">
+            <ul>
+                <li class="active"><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="#popular"><i class="fa-solid fa-fire"></i>Popular</a></li>
+                <li><a href="#favorites"><i class="fa-solid fa-star"></i> Favorites</a></li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'a8537e81a72deaee9e578b12150fe79b',
+                'format' : 'iframe',
+                'height' : 300,
+                'width' : 160,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.topcreativeformat.com/a8537e81a72deaee9e578b12150fe79b/invoke.js"></script>
+        <div class="nav_bottom"></div>
+    </nav>
 
-<!-- Sidebar -->
-<nav class="sidebar">
-    <div class="nav_top">
-        <ul>
-            <li class="active"><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
-            <li><a href="#popular"><i class="fa-solid fa-fire"></i>Popular</a></li>
-            <li><a href="#favorites"><i class="fa-solid fa-star"></i> Favorites</a></li>
-        </ul>
-    </div>
-    <script type="text/javascript">
-        atOptions = {
-            'key' : 'a8537e81a72deaee9e578b12150fe79b',
-            'format' : 'iframe',
-            'height' : 300,
-            'width' : 160,
-            'params' : {}
-        };
-    </script>
-    <script type="text/javascript" src="//www.topcreativeformat.com/a8537e81a72deaee9e578b12150fe79b/invoke.js"></script>
-    <div class="nav_bottom">
+    <div id="cata"></div>
 
-    </div>
-</nav>
-
-<div id="cata">
-    <!-- Les movie cards seront ajoutées ici -->
-</div>
-
-<script src="../js/main.js"></script> <!-- Charger JS -->
+    <script src="../js/main.js"></script> <!-- Load JS -->
 </body>
 </html>
