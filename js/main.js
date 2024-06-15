@@ -892,10 +892,9 @@ async function populateCatalogue() {
 
 
 function clickMenu() {
-    if (document.getElementById("sidebar").style.marginLeft == "-250px") {
+    if (document.getElementById("sidebar").style.marginLeft == "-250px" || document.getElementById("sidebar").style.marginLeft == "") {
         document.getElementById("sidebar").style.marginLeft = "0px";
     } else {
-        alert(document.getElementById("sidebar").style.marginLeft);
         document.getElementById("sidebar").style.marginLeft = "-250px";
     }
 }
