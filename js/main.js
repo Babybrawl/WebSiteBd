@@ -232,7 +232,7 @@ async function start(){
                 console.error('Erreur lors de la récupération des données:', error);
             });
 
-            setTimeout(go(), 3000);
+            setTimeout(go, 3000);
 
     } catch (error) {
         console.error("Une erreur s'est produite dans start2 :", error);
