@@ -74,13 +74,9 @@ body {
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 950px) {
     #cata{
         margin-left: 0;
-    }
-    
-    nav.sidebar {
-        display: none;
     }
 }
 
