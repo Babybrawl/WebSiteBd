@@ -286,6 +286,13 @@ label{
    #hamburgeur{
     display: none;
    }
+
+   section{
+    padding: 90px 0 0 300px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
    
 
 /* Additional responsive design */
