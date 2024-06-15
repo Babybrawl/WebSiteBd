@@ -9,57 +9,63 @@
 <body onload="setTimeout(start(), 1000);">
 
         <!-- Navbar -->
-        <nav class="navbar">
-            <div class="nav_left">
-                <img src="img/logo.png">
-                <h1>Website</h1>
+    <nav class="navbar">
+        <div class="nav_left">
+            <label for="check" id="hamburgeur">
+                <input type="checkbox" id="check" onclick="clickMenu()"> 
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <img id="logoPng" src="img/logo.png">
+            <h1 id="WebsiteH1">Website</h1>
+        </div>
+
+        <div class="nav_right">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <ul>
+                <input type="search" placeholder="search" id="search_bar" oninput="search()">
+                <div id="recherche"></div>
+            </ul>
+
+            <ul id="CategoriesTag">
+            <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
+            <div id="rechercheTag">
+                <button id="action" onclick="searchTag('none')">None</button>
+                <button id="action" onclick="searchTag('action')">Action</button>
+                <button id="action" onclick="searchTag('horreur')">Horreur</button>
+                <button id="action" onclick="searchTag('comedie')">Comédie</button>
+                <button id="action" onclick="searchTag('romantiques/drama')">romantiques/drama</button>
+                <button id="action" onclick="searchTag('sf')">science-fiction</button>
             </div>
-    
-            <div class="nav_right">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <ul>
-                    <input type="search" placeholder="search" id="search_bar" oninput="search()">
-                    <div id="recherche"></div>
-                </ul>
-    
-                <ul>
-                <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
-                <div id="rechercheTag">
-                    <button id="action" onclick="searchTag('none')">None</button>
-                    <button id="action" onclick="searchTag('action')">Action</button>
-                    <button id="action" onclick="searchTag('horreur')">Horreur</button>
-                    <button id="action" onclick="searchTag('comedie')">Comédie</button>
-                    <button id="action" onclick="searchTag('romantiques/drama')">romantiques/drama</button>
-                    <button id="action" onclick="searchTag('sf')">science-fiction</button>
-                </div>
-                </ul>
-    
-            </div>
-        </nav>
-    
-        <!-- Sidebar -->
-        <nav class="sidebar">
-            <div class="nav_top">
-                <ul>
-                    <li class="active"><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
-                    <li onclick="window.location.href='html/catalogue.html';"><a href="html/catalogue.html"><i class="fa-solid fa-fire"></i>Catalogue</a></li>
-                    <li><a href="#favorites"><i class="fa-solid fa-star"></i> Favorites</a></li>
-                </ul>
-            </div>
-            <script type="text/javascript">
-                atOptions = {
-                    'key' : 'a8537e81a72deaee9e578b12150fe79b',
-                    'format' : 'iframe',
-                    'height' : 300,
-                    'width' : 160,
-                    'params' : {}
-                };
-            </script>
-            <script type="text/javascript" src="//www.topcreativeformat.com/a8537e81a72deaee9e578b12150fe79b/invoke.js"></script>
-            <div class="nav_bottom">
-    
-            </div>
-        </nav>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="nav_top">
+            <ul>
+                <li class="active"><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li onclick="window.location.href='html/catalogue.html';"><a href="html/catalogue.html"><i class="fa-solid fa-fire"></i>Catalogue</a></li>
+                <li><a href="#favorites"><i class="fa-solid fa-star"></i> Favorites</a></li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'a8537e81a72deaee9e578b12150fe79b',
+                'format' : 'iframe',
+                'height' : 300,
+                'width' : 160,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.topcreativeformat.com/a8537e81a72deaee9e578b12150fe79b/invoke.js"></script>
+        <div class="nav_bottom">
+
+        </div>
+    </nav>
 
     <div class="video-container">
         <h1 id="titre">TITRE</h1>

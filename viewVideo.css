@@ -285,3 +285,100 @@ nav.navbar .nav_right button{
         font-size: 14px;
     }
 }
+
+/* Media Query pour les écrans jusqu'à 1050px de large */
+@media (max-width: 1050px) {
+    #search_bar {
+        width: 300px;
+    }
+
+    #recherche {
+        width: 300px;
+    }
+}
+
+/* Media Query pour les écrans jusqu'à 1000px de large */
+@media (max-width: 1000px) {
+    #search_bar {
+        width: 300px;
+    }
+
+    #recherche {
+        width: 300px;
+    }
+}
+
+/* Media Query pour les écrans à partir de 950px de large */
+@media (min-width: 950px) {
+    #sidebar {
+        margin-left: 0px !important;
+    }
+}
+
+/* Media Query pour les écrans jusqu'à 950px de large */
+@media (max-width: 950px) {
+    /* Styles pour les éléments section */
+    section {
+        padding: 90px 0 0 10px;
+    }
+
+    /* Styles pour les éléments nav avec la classe sidebar */
+    nav.sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #hamburgeur {
+        display: flex;
+        margin-right: 20px;
+    }
+
+    #logoPng{
+        margin-right: 0;
+    }
+
+    #WebsiteH1 {
+        display: none;
+    }
+
+    nav.navbar .nav_left {
+        width: auto;
+    }
+    
+}
+
+/* Media Query pour les écrans jusqu'à 768px de large */
+@media (max-width: 768px) {
+    .video-container h1#titre {
+        font-size: 24px;
+    }
+
+    .video-container h3#desc {
+        font-size: 16px;
+    }
+}
+
+/* Media Query pour les écrans jusqu'à 680px de large */
+@media (max-width: 680px) {
+    #search_bar {
+        width: 150px;
+    }
+
+    #recherche {
+        width: 150px;
+    }
+
+    #CategoriesTag {
+        margin-left: -40px;
+    }
+}
+
+/* Media Query pour les écrans jusqu'à 490px de large */
+@media (max-width: 490px) {
+    #logoPng {
+        display: none;
+    }
+}

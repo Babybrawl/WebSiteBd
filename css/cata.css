@@ -146,7 +146,7 @@ body {
         flex: 0 1 200px; /* 2 cartes par ligne */
         margin-right: 2.5%; /* Assure l'espace entre les cartes */
         height: 256px;
-        min-width: none;
+        min-width: 0;
     }
     
 }
