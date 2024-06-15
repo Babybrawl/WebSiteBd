@@ -612,11 +612,15 @@ label{
         width: 100%;
         display: flex;
         flex-direction: column;
-        padding-left: 55px;
+        padding-left: 0px;
     }
 
     /* Styles pour les éléments nav avec la classe sidebar */
     nav.sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar{
         margin-left: -250px;
     }
 
