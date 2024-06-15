@@ -179,6 +179,7 @@ nav.sidebar{
     padding-top: 50px;
     margin-top: 83.4px;
     transition: 1s ease;
+    margin-left: 0px;
 }
 
 nav.sidebar .nav_top ul{
@@ -516,35 +517,19 @@ label{
    }
    
 
-
-/* Media Query pour les écrans jusqu'à 768px de large */
-@media (max-width: 768px) {
-    .video-container h1#titre {
-        font-size: 24px;
-    }
-
-    .selectors select {
-        width: 150px;
-        height: 30px;
-        margin: 0 5px;
-    }
-
-    .video-container h3#desc {
-        font-size: 16px;
-    }
+/* Styles de base */
+.video-container h1#titre {
+    font-size: 36px;
 }
 
-/* Media Query pour les écrans jusqu'à 1300px de large */
-@media (max-width: 1300px) {
-    section .categories ul.tags {
-        margin-right: 100px;
-    }
-    section .categories{
-        padding-left: 0;
-    }
-    section .movies_categories{
-        padding-left: 0;
-    }
+.selectors select {
+    width: 200px;
+    height: 35px;
+    margin: 0 10px;
+}
+
+.video-container h3#desc {
+    font-size: 18px;
 }
 
 /* Media Query pour les écrans jusqu'à 1600px de large */
@@ -575,6 +560,18 @@ label{
     section ul {
         width: 75%;
     }
+
+    section .categories ul.tags {
+        margin-right: 100px;
+    }
+
+    section .categories {
+        padding-left: 0;
+    }
+
+    section .movies_categories {
+        padding-left: 0;
+    }
 }
 
 /* Media Query pour les écrans jusqu'à 1050px de large */
@@ -582,24 +579,24 @@ label{
     section ul {
         width: 70%;
     }
+
+    #search_bar {
+        width: 300px;
+    }
+
+    #recherche {
+        width: 300px;
+    }
 }
 
 /* Media Query pour les écrans jusqu'à 1000px de large */
-@media (max-width: 1050px) {
-    #search_bar{
+@media (max-width: 1000px) {
+    #search_bar {
         width: 300px;
     }
-    #recherche{
-        width: 300px;
-    }
-}
 
-@media (max-width: 900px) {
-    #WebsiteH1{
-        display: none;
-    }
-    nav.navbar .nav_left {
-        width: auto;
+    #recherche {
+        width: 300px;
     }
 }
 
@@ -632,19 +629,51 @@ label{
     section .categories {
         width: 100%;
     }
-    #hamburgeur{
+
+    #hamburgeur {
         display: flex;
     }
 }
 
+/* Media Query pour les écrans jusqu'à 900px de large */
+@media (max-width: 900px) {
+    #WebsiteH1 {
+        display: none;
+    }
+
+    nav.navbar .nav_left {
+        width: auto;
+    }
+}
+
+/* Media Query pour les écrans jusqu'à 768px de large */
+@media (max-width: 768px) {
+    .video-container h1#titre {
+        font-size: 24px;
+    }
+
+    .selectors select {
+        width: 150px;
+        height: 30px;
+        margin: 0 5px;
+    }
+
+    .video-container h3#desc {
+        font-size: 16px;
+    }
+}
+
+/* Media Query pour les écrans jusqu'à 680px de large */
 @media (max-width: 680px) {
-    #search_bar{
+    #search_bar {
         width: 150px;
     }
-    #recherche{
+
+    #recherche {
         width: 150px;
     }
-    #CategoriesTag{
+
+    #CategoriesTag {
         margin-left: -40px;
     }
 }
@@ -657,9 +686,9 @@ label{
     }
 }
 
+/* Media Query pour les écrans jusqu'à 490px de large */
 @media (max-width: 490px) {
-    /* Styles spécifiques pour la largeur des ul à 650px */
-    #logoPng{
+    #logoPng {
         display: none;
     }
 }
