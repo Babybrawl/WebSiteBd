@@ -8,9 +8,6 @@ body{
     width: calc(100% - 180px);
     overflow: hidden auto;
 }
-#sidebar{
-    margin-left: 0px;
-}
 /*
 .hidden {
     display: none;
