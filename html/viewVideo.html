@@ -81,17 +81,4 @@
 
     <script src="../js/main.js"></script> <!-- Load JS -->
 </body>
-<script>
-window.onload = function() {
-    setTimeout(function() {
-        var iframe = document.getElementById('video');
-        var contenuIframe = iframe.contentWindow || iframe.contentDocument;
-        if (contenuIframe.scrollTo) {
-            contenuIframe.scrollTo(0, 0);
-        } else if (contenuIframe.document) {
-            contenuIframe.document.documentElement.scrollTop = 0;
-        }
-    }, 5000); // Démarre après 5 secondes (5000 millisecondes)
-};
-</script>
 </html>
