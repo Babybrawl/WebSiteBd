@@ -73,7 +73,7 @@
             <select id="serie"></select>
             <select id="saison"></select>
         </div>
-        <div class="iframe-container">
+        <div class="iframe-container" onclick="ajusterHauteurIframe()">
             <iframe id="video" src="" scrolling="yes" frameborder="0" allowfullscreen="" webkitallowfullscreen=""></iframe>
         </div>
         <h3 id="desc">Description</h3>
@@ -81,4 +81,15 @@
 
     <script src="../js/main.js"></script> <!-- Load JS -->
 </body>
+<script>
+    // Fonction pour ajuster la hauteur de l'iframe en fonction de son contenu
+function ajusterHauteurIframe() {
+    var iframe = document.getElementById('monIframe');
+    var contenuIframe = iframe.contentDocument || iframe.contentWindow.document;
+    iframe.style.height = contenuIframe.body.scrollHeight + 'px';
+}
+
+// Appeler la fonction lors du chargement initial de l'iframe et lors de toute modification du contenu
+window.onload = ajusterHauteurIframe;
+</script>
 </html>
