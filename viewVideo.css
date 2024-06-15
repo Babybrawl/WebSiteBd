@@ -352,6 +352,13 @@ label{
     }
 }
 
+@media (max-width: 740px) {
+    .iframe-container {
+        padding-bottom: 0;
+        height: 403px;
+    }
+}
+
 /* Media Query pour les écrans jusqu'à 1050px de large */
 @media (max-width: 1050px) {
     #search_bar {
