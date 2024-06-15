@@ -296,6 +296,11 @@ label{
    
 
 /* Additional responsive design */
+@media (max-width: 1200px) {
+    section{
+        padding: 0px 0 0 140px;
+    }
+}
 @media (max-width: 1024px) {
     .navbar .nav_left img {
         width: 40px;
