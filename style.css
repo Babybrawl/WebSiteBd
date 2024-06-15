@@ -618,7 +618,7 @@ label{
 /* Media Query pour les écrans à partir de 950px de large */
 @media (min-width: 950px) {
     #sidebar {
-        margin-left: 0px;
+        margin-left: 0px !important;
     }
 }
 
