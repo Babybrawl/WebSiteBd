@@ -135,7 +135,7 @@ nav.navbar .nav_right button{
     z-index: 999; /* Ensure it's below navbar */
     top: 80px; /* Align directly below the navbar */
     transition: 1s ease;
-    margin-left: 0px;
+    margin-left: 0px; 
 }
 
 .sidebar .nav_top ul {
@@ -217,6 +217,7 @@ nav.navbar .nav_right button{
     width: 100%;
     height: 100%;
     border: none;
+    scroll-margin-top: 50px; /* ajustez la valeur en fonction de la hauteur de votre source ou du décalage souhaité */
 }
 
 .video-container h3#desc {
