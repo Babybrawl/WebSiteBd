@@ -232,19 +232,7 @@ async function start(){
                 console.error('Erreur lors de la récupération des données:', error);
             });
 
-            // Sélectionne la div avec les classes 'jw-video jw-reset'
-            var videoDiv = document.querySelector('.jw-video.jw-reset');
-
-            // Vérifie si l'élément existe avant d'essayer de récupérer sa hauteur
-            if (videoDiv) {
-                // Récupère la hauteur de l'élément
-                var height = videoDiv.offsetHeight;
-                alert('La hauteur actuelle de la div est : ' + height + 'px');
-            } else {
-                alert('L\'élément avec les classes "jw-video jw-reset" n\'a pas été trouvé.');
-            }
-
-
+            setTimeout(go(), 3000);
 
     } catch (error) {
         console.error("Une erreur s'est produite dans start2 :", error);
@@ -910,4 +898,18 @@ function clickMenu() {
     } else {
         document.getElementById("sidebar").style.marginLeft = "-250px";
     }
+}
+
+function go(){
+                // Sélectionne la div avec les classes 'jw-video jw-reset'
+                var videoDiv = document.querySelector('.jw-video.jw-reset');
+
+                // Vérifie si l'élément existe avant d'essayer de récupérer sa hauteur
+                if (videoDiv) {
+                    // Récupère la hauteur de l'élément
+                    var height = videoDiv.offsetHeight;
+                    alert('La hauteur actuelle de la div est : ' + height + 'px');
+                } else {
+                    alert('L\'élément avec les classes "jw-video jw-reset" n\'a pas été trouvé.');
+                }
 }
