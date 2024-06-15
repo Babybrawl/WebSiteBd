@@ -896,5 +896,6 @@ function clickMenu() {
         document.getElementById("sidebar").style.marginLeft = "0px";
     } else {
         document.getElementById("sidebar").style.marginLeft = "-250px";
+        alert(document.getElementById("sidebar").style.marginLeft);
     }
 }
