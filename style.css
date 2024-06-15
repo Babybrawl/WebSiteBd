@@ -532,6 +532,21 @@ label{
     font-size: 18px;
 }
 
+/* Styles de base */
+.video-container h1#titre {
+    font-size: 36px;
+}
+
+.selectors select {
+    width: 200px;
+    height: 35px;
+    margin: 0 10px;
+}
+
+.video-container h3#desc {
+    font-size: 18px;
+}
+
 /* Media Query pour les écrans jusqu'à 1600px de large */
 @media (max-width: 1600px) {
     /* Styles pour les éléments avec la classe .continue, .news, .trending */
@@ -600,6 +615,7 @@ label{
     }
 }
 
+/* Media Query pour les écrans à partir de 950px de large */
 @media (min-width: 950px) {
     nav.sidebar {
         margin-left: 0px;
@@ -626,7 +642,7 @@ label{
         margin-left: -250px;
     }
 
-    #sidebar{
+    #sidebar {
         margin-left: -250px;
     }
 
@@ -643,10 +659,7 @@ label{
     #hamburgeur {
         display: flex;
     }
-}
 
-/* Media Query pour les écrans jusqu'à 900px de large */
-@media (max-width: 900px) {
     #WebsiteH1 {
         display: none;
     }
