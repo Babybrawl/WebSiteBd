@@ -15,8 +15,14 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav_left">
-            <img src="../img/logo.png" alt="Logo">
-            <h1>Website</h1>
+            <label for="check" id="hamburgeur">
+                <input type="checkbox" id="check" onclick="clickMenu()"> 
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <img id="logoPng" src="img/logo.png">
+            <h1 id="WebsiteH1">Website</h1>
         </div>
 
         <div class="nav_right">
@@ -26,26 +32,27 @@
                 <div id="recherche"></div>
             </ul>
 
-            <ul>
-                <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
-                <div id="rechercheTag">
-                    <button id="action" onclick="searchTag('none')">None</button>
-                    <button id="action" onclick="searchTag('action')">Action</button>
-                    <button id="action" onclick="searchTag('horreur')">Horreur</button>
-                    <button id="action" onclick="searchTag('comedie')">Comédie</button>
-                    <button id="action" onclick="searchTag('romantiques/drama')">Romantiques/Drama</button>
-                    <button id="action" onclick="searchTag('sf')">Science-Fiction</button>
-                </div>
+            <ul id="CategoriesTag">
+            <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
+            <div id="rechercheTag">
+                <button id="action" onclick="searchTag('none')">None</button>
+                <button id="action" onclick="searchTag('action')">Action</button>
+                <button id="action" onclick="searchTag('horreur')">Horreur</button>
+                <button id="action" onclick="searchTag('comedie')">Comédie</button>
+                <button id="action" onclick="searchTag('romantiques/drama')">romantiques/drama</button>
+                <button id="action" onclick="searchTag('sf')">science-fiction</button>
+            </div>
             </ul>
+
         </div>
     </nav>
 
     <!-- Sidebar -->
-    <nav class="sidebar">
+    <nav class="sidebar" id="sidebar">
         <div class="nav_top">
             <ul>
-                <li onclick="window.location.href='/index.html';"><a href="/index.html"><i class="fa-solid fa-house"></i>Home</a></li>
-                <li onclick="window.location.href='html/catalogue.html';" class="active"><a href="html/catalogue.html"><i class="fa-solid fa-fire"></i>Catalogue</a></li>
+                <li class="active"><a href="#home"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li onclick="window.location.href='html/catalogue.html';"><a href="html/catalogue.html"><i class="fa-solid fa-fire"></i>Catalogue</a></li>
                 <li><a href="#favorites"><i class="fa-solid fa-star"></i> Favorites</a></li>
             </ul>
         </div>
@@ -59,7 +66,9 @@
             };
         </script>
         <script type="text/javascript" src="//www.topcreativeformat.com/a8537e81a72deaee9e578b12150fe79b/invoke.js"></script>
-        <div class="nav_bottom"></div>
+        <div class="nav_bottom">
+
+        </div>
     </nav>
 
     <div id="cata"></div>
