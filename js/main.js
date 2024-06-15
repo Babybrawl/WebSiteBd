@@ -895,7 +895,7 @@ function clickMenu() {
     if (document.getElementById("sidebar").style.marginLeft == "-250px") {
         document.getElementById("sidebar").style.marginLeft = "0px";
     } else {
-        document.getElementById("sidebar").style.marginLeft = "-250px";
         alert(document.getElementById("sidebar").style.marginLeft);
+        document.getElementById("sidebar").style.marginLeft = "-250px";
     }
 }
