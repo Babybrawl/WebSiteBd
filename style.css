@@ -237,51 +237,14 @@ section .categories {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centrer horizontalement */
-    padding: 0 55px; /* Ajustez le padding si nécessaire */
+    padding-left: 0; /* Remplacer le padding gauche existant */
 }
 
-section .categories .categories_title {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centrer horizontalement */
-}
-
-/* Movies Categories */
-section .movies_categories {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrer horizontalement */
-    padding: 0 55px; /* Ajustez le padding si nécessaire */
-}
-
-section .movies_categories .title {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centrer horizontalement */
-}
-
-/* Categories Tags */
-section .categories ul.tags {
-    display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    flex-wrap: wrap;
-    margin: 0;
-}
-
-/* Movies Cards */
-section ul {
-    display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-section ul .movies_card, section ul .load_card {
-    margin-right: 25px; /* Ajustez la marge si nécessaire */
-    margin-bottom: 25px; /* Ajoutez une marge en bas pour espacer les lignes */
-}
-
+    section .categories .categories_title{
+        display: flex;
+        align-items: center;
+        
+    }
 
     section .categories .categories_title h2 i{
         margin-right: 15px;
@@ -591,10 +554,14 @@ label{
         width: 80%;
     }
 
-    /* Styles pour les éléments avec la classe .movies_categories */
-    section .movies_categories {
-        width: calc(100% - 180px); /* Calcul de la largeur moins 180px */
-    }
+/* Movies Categories */
+section .movies_categories {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    padding-left: 0; /* Remplacer le padding gauche existant */
+}
 }
 
 /* Media Query pour les écrans jusqu'à 1300px de large */
