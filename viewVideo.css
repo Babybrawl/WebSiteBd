@@ -134,7 +134,7 @@ nav.navbar .nav_right button{
     margin-top: 0; /* Remove margin-top */
     z-index: 999; /* Ensure it's below navbar */
     top: 80px; /* Align directly below the navbar */
-    transition: 1s ease;
+    transition: 0.4s ease;
     margin-left: 0px; 
 }
 
@@ -177,7 +177,7 @@ nav.navbar .nav_right button{
     max-width: 800px;
     background-color: #202021;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    margin-top: 180px; /* Adjust as necessary */
+    margin-top: 140px; /* Adjust as necessary */
 }
 
 .video-container h1#titre {
@@ -288,7 +288,7 @@ label{
    }
 
    section{
-    padding: 90px 0 0 300px;
+    padding: 0px 0 0 120px;
     height: 100%;
     width: 100%;
     align-items: center;
@@ -389,14 +389,14 @@ label{
 }
 
 /* Media Query pour les écrans à partir de 950px de large */
-@media (min-width: 950px) {
+@media (min-width: 1080px) {
     #sidebar {
         margin-left: 0px !important;
     }
 }
 
 /* Media Query pour les écrans jusqu'à 950px de large */
-@media (max-width: 950px) {
+@media (max-width: 1080px) {
     /* Styles pour les éléments section */
     section {
         padding: 90px 0 0 10px;
