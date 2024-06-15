@@ -902,7 +902,7 @@ function clickMenu() {
 
 function go(){
                 // Sélectionne la div avec les classes 'jw-video jw-reset'
-                var videoDiv = document.querySelector('.jw-video.jw-reset');
+                var videoDiv = document.getElementById("myElement");
 
                 // Vérifie si l'élément existe avant d'essayer de récupérer sa hauteur
                 if (videoDiv) {
