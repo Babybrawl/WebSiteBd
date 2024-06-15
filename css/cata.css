@@ -168,6 +168,10 @@ body {
     #CategoriesTag {
         margin-left: -40px;
     }
+    #cata .movies_card{
+        width: 150px !important;
+        min-width: 150px !important;
+    }
 }
 
 /* Media Query pour les écrans jusqu'à 490px de large */
