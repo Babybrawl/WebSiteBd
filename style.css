@@ -231,20 +231,57 @@ section{
     width: 100%;
 }
 
-    /* Categories */
-    section .categories{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding-left: 55px;
-        width: calc(100% - 180px);
-    }
+/* Categories */
+section .categories {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    padding: 0 55px; /* Ajustez le padding si nécessaire */
+}
 
-    section .categories .categories_title{
-        display: flex;
-        align-items: center;
-        
-    }
+section .categories .categories_title {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrer horizontalement */
+}
+
+/* Movies Categories */
+section .movies_categories {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    padding: 0 55px; /* Ajustez le padding si nécessaire */
+}
+
+section .movies_categories .title {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrer horizontalement */
+}
+
+/* Categories Tags */
+section .categories ul.tags {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+/* Movies Cards */
+section ul {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+section ul .movies_card, section ul .load_card {
+    margin-right: 25px; /* Ajustez la marge si nécessaire */
+    margin-bottom: 25px; /* Ajoutez une marge en bas pour espacer les lignes */
+}
+
 
     section .categories .categories_title h2 i{
         margin-right: 15px;
