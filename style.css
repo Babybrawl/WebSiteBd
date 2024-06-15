@@ -600,6 +600,12 @@ label{
     }
 }
 
+@media (min-width: 950px) {
+    nav.sidebar {
+        margin-left: 0px;
+    }
+}
+
 /* Media Query pour les écrans jusqu'à 950px de large */
 @media (max-width: 950px) {
     /* Styles pour les éléments section */
