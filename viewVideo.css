@@ -404,7 +404,7 @@ label{
 @media (max-width: 1080px) {
     /* Styles pour les éléments section */
     section {
-        padding: 90px 0 0 10px;
+        padding: 0px 0 0 10px;
     }
 
     /* Styles pour les éléments nav avec la classe sidebar */
