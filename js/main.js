@@ -380,7 +380,7 @@ function searchCategories() {
 
 function searchTag(tag) {
     localStorage.setItem("tagDef", tag);
-    if(document.getElementById("logoPng").style.display = "none"){
+    if(document.getElementById("logoPng").style.display == "none"){
         document.getElementById("ButtonCategories").innerHTML = tag; 
     }else{
         document.getElementById("ButtonCategories").innerHTML = "Categories : " + tag; 
