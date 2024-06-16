@@ -908,3 +908,23 @@ function clickMenu() {
         document.getElementById("sidebar").style.marginLeft = "-250px";
     }
 }
+
+function resizeWidth(){
+    // Récupérer l'élément ButtonCategories
+    const buttonCategories = document.getElementById("ButtonCategories");
+        
+    // Vérifier la largeur de la fenêtre et ajuster le texte du bouton en conséquence
+    if (window.innerWidth <= 490) {
+        buttonCategories.innerHTML = none;
+        document.getElementById("CategoriesTag").style.padding = "20px";
+        buttonCategories.style.width = "auto";
+    } else {
+        buttonCategories.innerHTML = "Categories : " + none;
+        document.getElementById("CategoriesTag").style.padding = "40px";
+        buttonCategories.style.width = "150px";
+    }
+        
+        // Appeler la fonction search (assurez-vous que cette fonction est définie ailleurs dans votre code)
+        search();
+}
+window.addEventListener('resize', searchTag(none));
