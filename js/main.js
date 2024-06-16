@@ -912,19 +912,20 @@ function clickMenu() {
 function resizeWidth(){
     // Récupérer l'élément ButtonCategories
     const buttonCategories = document.getElementById("ButtonCategories");
-        
-    // Vérifier la largeur de la fenêtre et ajuster le texte du bouton en conséquence
+
     if (window.innerWidth <= 490) {
-        buttonCategories.innerHTML = none;
+        buttonCategories.innerHTML = '';
         document.getElementById("CategoriesTag").style.padding = "20px";
         buttonCategories.style.width = "auto";
     } else {
-        buttonCategories.innerHTML = "Categories : " + none;
+        buttonCategories.innerHTML = 'Categories : ';
         document.getElementById("CategoriesTag").style.padding = "40px";
         buttonCategories.style.width = "150px";
     }
-        
-        // Appeler la fonction search (assurez-vous que cette fonction est définie ailleurs dans votre code)
-        search();
 }
-window.addEventListener('resize', searchTag(none));
+
+    // Ajoutez un écouteur d'événement resize à la fenêtre
+    window.addEventListener('resize', resizeWidth);
+
+    // Appelez resizeWidth initialement pour vérifier la taille de la fenêtre au chargement
+    document.addEventListener('DOMContentLoaded', resizeWidth);
