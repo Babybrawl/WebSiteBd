@@ -379,14 +379,21 @@ function searchCategories() {
 }
 
 function searchTag(tag) {
+    // Stocker le tag dans le localStorage
     localStorage.setItem("tagDef", tag);
-    if(window.innerWidth <= 490){
-        document.getElementById("ButtonCategories").innerHTML = tag; 
-    }else{
-        document.getElementById("ButtonCategories").innerHTML = "Categories : " + tag; 
+    
+    // Récupérer l'élément ButtonCategories
+    const buttonCategories = document.getElementById("ButtonCategories");
+    
+    // Vérifier la largeur de la fenêtre et ajuster le texte du bouton en conséquence
+    if (window.innerWidth <= 490) {
+        buttonCategories.innerHTML = tag;
+    } else {
+        buttonCategories.innerHTML = "Categories : " + tag;
     }
     
-    search(); // Appeler la fonction search normalement
+    // Appeler la fonction search (assurez-vous que cette fonction est définie ailleurs dans votre code)
+    search();
 }
 
 
