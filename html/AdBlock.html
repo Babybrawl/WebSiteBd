@@ -67,12 +67,12 @@
 
     <section>
         <div class="banner-container" id="banner-container">
-            <div class="banner" onclick="text(android)">
+            <div class="banner" onclick="text('android')">
                 <i class="fa-solid fa-mobile-screen-button"></i>
                 <h2>Android</h2>
                 <p>Block all ads on your Android device</p>
             </div>
-            <div class="banner" onclick="text(pc)">
+            <div class="banner" onclick="text('pc')">
                 <i class="fa-solid fa-desktop"></i>
                 <h2>PC</h2>
                 <p>Block all ads on your PC</p>
@@ -121,7 +121,6 @@
     }
 
     function text(x){
-        console.log("test");
         if(x == "android"){
             document.getElementById("contenu").innerHTML = "BlockerAndroid";
             document.getElementById("contenu").style.display = "block";
