@@ -221,6 +221,8 @@
                     buttonCategories.innerHTML = '' + localStorage.getItem("tagDef");
                 }
                 document.getElementById("CategoriesTag").style.padding = "20px";
+                document.getElementById("rechercheTag").style.marginLeft = "-79px";
+                document.getElementById("rechercheTag").style.width = "128px"
                 buttonCategories.style.width = "auto";
             } else {
                 if(localStorage.getItem("tagDef") == 0){
@@ -229,6 +231,8 @@
                     buttonCategories.innerHTML = 'Categories : ' + localStorage.getItem("tagDef");
                 }
                 document.getElementById("CategoriesTag").style.padding = "40px";
+                                document.getElementById("rechercheTag").style.marginLeft = "0";
+                document.getElementById("rechercheTag").style.width = "150px"
                 buttonCategories.style.width = "150px";
             }
         }
