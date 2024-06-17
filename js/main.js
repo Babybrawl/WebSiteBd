@@ -916,11 +916,11 @@ function resizeWidth(){
     const buttonCategories = document.getElementById("ButtonCategories");
 
     if (window.innerWidth <= 490) {
-        buttonCategories.innerHTML = '';
+        buttonCategories.innerHTML = '' + localStorage.getItem("tagDef");
         document.getElementById("CategoriesTag").style.padding = "20px";
         buttonCategories.style.width = "auto";
     } else {
-        buttonCategories.innerHTML = 'Categories : ';
+        buttonCategories.innerHTML = 'Categories : ' + localStorage.getItem("tagDef");
         document.getElementById("CategoriesTag").style.padding = "40px";
         buttonCategories.style.width = "150px";
     }
