@@ -38,7 +38,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px 0 0 120px;
+    padding: 0px 0 0 275px;
+    width: auto;
 }
 
 .banner-container {
