@@ -76,8 +76,9 @@ section {
 .banner h2 {
     margin: 10px 0;
 }
-#contenu{
+#android, #pc{
     display: none;
+    margin-top: 1302px;
 }
 /* Additional responsive design */
 @media (max-width: 1200px) {
