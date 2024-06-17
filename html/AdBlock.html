@@ -66,17 +66,21 @@
     </nav>
 
     <section>
-        <div class="banner-container">
-            <div class="banner" onclick="window.location.href='android.html'">
+        <div class="banner-container" id="banner-container">
+            <div class="banner" onclick="text(android)">
                 <i class="fa-solid fa-mobile-screen-button"></i>
                 <h2>Android</h2>
-                <p>Stream on your Android device</p>
+                <p>Block all ads on your Android device</p>
             </div>
-            <div class="banner" onclick="window.location.href='pc.html'">
+            <div class="banner" onclick="text(pc)">
                 <i class="fa-solid fa-desktop"></i>
                 <h2>PC</h2>
-                <p>Stream on your PC</p>
+                <p>Block all ads on your PC</p>
             </div>
+        </div>
+
+        <div id="contenu">
+            drtfgyhujikolpqzdindiqzdo,qzd,qzod,koqzf,koq,fkoe,f
         </div>
     </section>
 
@@ -84,3 +88,45 @@
     <script src="your-script.js"></script>
 </body>
 </html>
+<script>
+    window.onresize = function() {
+        resizeWidth();
+    };
+
+    function resizeWidth(){
+        // Récupérer l'élément ButtonCategories
+        const buttonCategories = document.getElementById("ButtonCategories");
+
+        if (window.innerWidth <= 490) {
+            if(localStorage.getItem("tagDef") == 0){
+                buttonCategories.innerHTML = '' + "none";
+            }else{
+                buttonCategories.innerHTML = '' + localStorage.getItem("tagDef");
+            }
+            document.getElementById("CategoriesTag").style.padding = "20px";
+            document.getElementById("rechercheTag").style.marginLeft = "-79px";
+            document.getElementById("rechercheTag").style.width = "128px"
+            buttonCategories.style.width = "auto";
+        } else {
+            if(localStorage.getItem("tagDef") == 0){
+                buttonCategories.innerHTML = 'Categories : ' + "none";
+            }else{
+                buttonCategories.innerHTML = 'Categories : ' + localStorage.getItem("tagDef");
+            }
+            document.getElementById("CategoriesTag").style.padding = "40px";
+                            document.getElementById("rechercheTag").style.marginLeft = "0";
+            document.getElementById("rechercheTag").style.width = "150px"
+            buttonCategories.style.width = "150px";
+        }
+    }
+
+    function text(x){
+        if(x == "android"){
+            document.getElementById("contenu").innerHTML = "BlockerAndroid";
+            document.getElementById("contenu").style.display = "block";
+        }else{
+            document.getElementById("contenu").innerHTML = "BlockerPc";
+            document.getElementById("contenu").style.display = "block";
+        }
+    }
+</script>

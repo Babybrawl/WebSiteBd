@@ -55,8 +55,10 @@ section {
     justify-content: center;
     width: 40%;
     height: 200px;
-    background-color: #4B9168;
     border-radius: 10px;
+    border-style: solid;
+    border-color: #4B9168;
+    border-block: solid;
     cursor: pointer;
     text-align: center;
     transition: background-color 0.3s;
@@ -74,14 +76,16 @@ section {
 .banner h2 {
     margin: 10px 0;
 }
-
+#contenu{
+    display: none;
+}
 /* Additional responsive design */
 @media (max-width: 1200px) {
     section{
         padding: 0px 0 0 140px;
     }
 }
-@media (max-width: 1080px) {
+@media (max-width: 950px) {
     /* Styles pour les éléments section */
     section {
         padding: 0px 0 0 10px;
