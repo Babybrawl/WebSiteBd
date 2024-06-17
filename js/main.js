@@ -46,7 +46,7 @@ async function getAllMovies() {
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+localStorage.setItem("tagDef", "none");
 array = [];
 var click = 0;
 var click3 = 0;
@@ -929,5 +929,3 @@ function resizeWidth(){
 window.onresize = function(){
     resizeWidth();
 }
-
-localStorage.setItem("tagDef", "none");
