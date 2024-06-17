@@ -87,7 +87,6 @@ nav.navbar .nav_right ul div{
     width: 500px;
     height: 500px;
     background-color: grey;
-    border-radius: 30px;
     overflow-x: hidden;
     overflow-y: auto;
     display: none;
@@ -119,7 +118,7 @@ nav.navbar .nav_right button{
     nav.navbar .nav_right button:hover{
         background-color: rgba(75, 145, 104, 0.137)
     }
-    
+
 #action{
     background-color: #151517;
     width: 100%;
@@ -151,30 +150,23 @@ nav.navbar .nav_right button{
     margin: 0;
 }
 
-.sidebar .nav_top ul li {
+nav.sidebar .nav_top ul li{
     display: flex;
     align-items: center;
     height: 60px;
     cursor: pointer;
     margin-bottom: 10px;
-    padding-left: 20px;
-    transition: background-color 0.3s ease;
 }
+    /* li.active*/
+    nav.sidebar .nav_top ul li.active{
+        background-color: #366D4F;
+    }
 
-.sidebar .nav_top ul li.active {
-    background-color: #366D4F;
-}
+    /* li.active -> a */
+    nav.sidebar .nav_top ul li.active a{
+        color: #FEFEFE;
+    }
 
-.sidebar .nav_top ul li a {
-    color: #FEFEFE;
-    text-decoration: none;
-    margin-left: 15px;
-    font-size: 18px;
-}
-
-.sidebar .nav_top ul li a i {
-    margin-right: 20px;
-}
     /* li:hover */
     nav.sidebar .nav_top ul li:hover{
         background-color: #414142;
@@ -184,6 +176,18 @@ nav.navbar .nav_right button{
     nav.sidebar .nav_top ul li.active:hover{
         background-color: #366D4F;
     }
+
+nav.sidebar .nav_top ul li a{
+    color: #FEFEFE;
+    text-decoration: none;
+    margin-left: 50px;
+    color: #77767B;
+}
+
+nav.sidebar .nav_top ul li a i{
+    margin-right: 20px;
+}
+
 /* Video Container */
 .video-container {
     text-align: center;
