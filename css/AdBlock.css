@@ -38,7 +38,6 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 70px); /* Adjust height based on navbar height */
     padding: 0px 0 0 120px;
 }
 
@@ -78,7 +77,7 @@ section {
 }
 #android, #pc{
     display: none;
-    margin-top: 1302px;
+    margin-top: 100px;
 }
 /* Additional responsive design */
 @media (max-width: 1200px) {
