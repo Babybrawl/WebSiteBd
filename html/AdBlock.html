@@ -19,7 +19,7 @@
                 <span></span>
                 <span></span>
             </label>
-            <img id="logoPng" src="image/logo.jpg" alt="Logo">
+            <img id="logoPng" src="/image/logo.jpg" alt="Logo">
             <h1 id="WebsiteH1">Website</h1>
         </div>
         <div class="nav_right">
@@ -79,8 +79,57 @@
             </div>
         </div>
 
-        <div id="contenu">
-            drtfgyhujikolpqzdindiqzdo,qzd,qzod,koqzf,koq,fkoe,f
+        <div id="android">
+            <h1>Étape 1 : Ouvrir Firefox sur votre appareil Android</h1>
+            - Assurez-vous que Firefox est installé et ouvrez-le sur votre appareil.
+
+            <h1>Étape 2 : Accéder au site d'extension uBlock Origin</h1>
+            - Dans la barre d'adresse de Firefox, tapez addons.mozilla.org.
+            - Recherchez "uBlock Origin" dans la barre de recherche sur le site addons.mozilla.org.
+            
+            <h1>Étape 3 : Sélectionner uBlock Origin</h1>
+            - Une fois que vous avez trouvé uBlock Origin dans les résultats de recherche, appuyez dessus pour ouvrir la page de l'extension.
+            
+            <h1>Étape 4 : Installer uBlock Origin</h1>
+            - Sur la page de l'extension uBlock Origin, vous verrez un bouton "Ajouter à Firefox".
+            - Appuyez sur ce bouton pour démarrer le processus d'installation.
+            
+            <h1>Étape 5 : Confirmer l'installation</h1>
+            - Firefox vous demandera de confirmer que vous souhaitez ajouter l'extension. Appuyez sur "Ajouter" pour continuer.
+            
+            <h1>Étape 6 : Terminer l'installation</h1>
+            - L'extension uBlock Origin sera téléchargée et installée
+        </div>
+        <div id="pc">
+            <h1> Étape 1 : Ouvrir Google Chrome</h1>
+            - Lancez votre navigateur Google Chrome.
+
+            <h1> Étape 2 : Accéder au Chrome Web Store</h1>
+            - Dans la barre d'adresse, tapez `https://chrome.google.com/webstore` et appuyez sur Entrée.
+
+            <h1> Étape 3 : Rechercher uBlock Origin</h1>
+            - Dans la barre de recherche située en haut à gauche de la page, tapez "uBlock Origin" et appuyez sur Entrée.
+
+            <h1> Étape 4 : Sélectionner uBlock Origin</h1>
+            - Dans les résultats de recherche, trouvez l'extension "uBlock Origin" développée par Raymond Hill (gorhill).
+            - Cliquez sur "uBlock Origin" pour accéder à la page de l'extension.
+
+            <h1> Étape 5 : Ajouter à Chrome</h1>
+            - Sur la page de l'extension, cliquez sur le bouton bleu "Ajouter à Chrome".
+
+            <h1> Étape 6 : Confirmer l'installation</h1>
+            - Une fenêtre contextuelle apparaîtra pour confirmer l'ajout de l'extension. Cliquez sur "Ajouter l'extension".
+
+            <h1> Étape 7 : Vérifier l'installation</h1>
+            - Une fois l'installation terminée, vous verrez une icône de bouclier rouge avec un "u" blanc apparaître dans la barre d'outils de Chrome, indiquant que l'extension uBlock Origin a été correctement installée.
+
+            <h1> Étape 8 : Configurer uBlock Origin (optionnel)</h1>
+            - Cliquez sur l'icône de l'extension pour ouvrir uBlock Origin.
+            - Vous pouvez accéder aux paramètres en cliquant sur l'icône d'engrenage. Ici, vous pouvez ajuster les filtres et autres préférences selon vos besoins.
+
+            Et voilà ! Vous avez maintenant installé l'extension uBlock Origin sur Google Chrome pour améliorer votre expérience de navigation en bloquant les publicités et autres contenus indésirables.
+
+            Pour plus de détails ou de support, vous pouvez visiter la page d'aide officielle de uBlock Origin sur le [Chrome Web Store](https://chrome.google.com/webstore).
         </div>
     </section>
 
@@ -122,11 +171,13 @@
 
     function text(x){
         if(x == "android"){
-            document.getElementById("contenu").innerHTML = "BlockerAndroid";
-            document.getElementById("contenu").style.display = "block";
+            document.getElementById("android").style.display = "block";
+            document.getElementById("pc").style.display = "none";
+            document.getElementById("banner-container").style.display = "none";
         }else{
-            document.getElementById("contenu").innerHTML = "BlockerPc";
-            document.getElementById("contenu").style.display = "block";
+            document.getElementById("android").style.display = "none";
+            document.getElementById("pc").style.display = "block";
+            document.getElementById("banner-container").style.display = "none";
         }
     }
 </script>
