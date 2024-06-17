@@ -39,7 +39,7 @@ section {
     justify-content: center;
     align-items: center;
     height: calc(100vh - 70px); /* Adjust height based on navbar height */
-    padding: 20px;
+    padding: 0px 0 0 120px;
 }
 
 .banner-container {
@@ -73,4 +73,17 @@ section {
 
 .banner h2 {
     margin: 10px 0;
+}
+
+/* Additional responsive design */
+@media (max-width: 1200px) {
+    section{
+        padding: 0px 0 0 140px;
+    }
+}
+@media (max-width: 1080px) {
+    /* Styles pour les éléments section */
+    section {
+        padding: 0px 0 0 10px;
+    }
 }
