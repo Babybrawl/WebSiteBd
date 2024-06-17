@@ -39,7 +39,6 @@ section {
     justify-content: center;
     align-items: center;
     height: calc(100vh - 70px); /* Adjust height based on navbar height */
-    background-color: #202021;
     padding: 20px;
 }
 
