@@ -58,7 +58,7 @@ section {
     border-radius: 10px;
     border-style: solid;
     border-color: #4B9168;
-    border-block: solid;
+    border-block: 0;
     cursor: pointer;
     text-align: center;
     transition: background-color 0.3s;
