@@ -926,6 +926,8 @@ function resizeWidth(){
     }
 }
 
-    window.onresize = function(){
-        resizeWidth();
-    }
+window.onresize = function(){
+    resizeWidth();
+}
+
+localStorage.setItem("tagDef", "none");
