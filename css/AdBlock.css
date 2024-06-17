@@ -79,6 +79,52 @@ section {
     display: none;
     margin-top: 100px;
 }
+/* Styles pour le bouton de retour */
+#android button,
+#pc button {
+    background-color: #4B9168;
+    color: #FEFEFE;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px; /* Espacement en bas du bouton */
+}
+
+#android button:hover,
+#pc button:hover {
+    background-color: #366D4F;
+}
+
+/* Styles pour les sections Android et PC */
+#android,
+#pc {
+    display: none; /* Par défaut, les sections sont cachées */
+    margin-top: 20px; /* Espacement en haut de la section */
+    padding: 20px; /* Espacement interne de la section */
+    background-color: #FFFFFF; /* Fond blanc pour la section */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Affichage en flex pour le container de bannières */
+#banner-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px; /* Espacement en bas du container de bannières */
+}
+
+/* Styles supplémentaires pour la section principale */
+#section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Espacement interne de la section principale */
+}
+
 /* Additional responsive design */
 @media (max-width: 1200px) {
     section{
