@@ -3,34 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css"> <!-- Link main CSS -->
+    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/css/AdBlock.css">
-    <link rel="icon" href="data:," />
-    <script src="https://kit.fontawesome.com/3561a4943c.js" crossorigin="anonymous"></script> <!-- Fontawesome Lib -->
-    <title>Website - Streaming </title>
+    <link rel="icon" href="data:,">
+    <script src="https://kit.fontawesome.com/3561a4943c.js" crossorigin="anonymous"></script>
+    <title>Website - Streaming</title>
 </head>
 <body class="hidden" onload="start2()">
-    
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav_left">
             <label for="check" id="hamburgeur">
-                <input type="checkbox" id="check" onclick="clickMenu()"> 
+                <input type="checkbox" id="check" onclick="clickMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
-            <img id="logoPng" src="image/logo.jpg">
+            <img id="logoPng" src="image/logo.jpg" alt="Logo">
             <h1 id="WebsiteH1">Website</h1>
         </div>
-
         <div class="nav_right">
             <i class="fa-solid fa-magnifying-glass"></i>
             <ul>
                 <input type="search" placeholder="search" id="search_bar" oninput="search()">
                 <div id="recherche"></div>
             </ul>
-
             <ul id="CategoriesTag">
                 <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
                 <div id="rechercheTag">
@@ -42,7 +39,6 @@
                     <button id="action" onclick="searchTag('sf')">science-fiction</button>
                 </div>
             </ul>
-
         </div>
     </nav>
 
@@ -55,32 +51,36 @@
                 <li><a href="#favorites"><i class="fa-solid fa-star"></i> Favorites</a></li>
             </ul>
         </div>
-        <script type="text/javascript">
-            atOptions = {
-                'key' : 'a8537e81a72deaee9e578b12150fe79b',
-                'format' : 'iframe',
-                'height' : 300,
-                'width' : 160,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.topcreativeformat.com/a8537e81a72deaee9e578b12150fe79b/invoke.js"></script>
         <div class="nav_bottom">
+            <script type="text/javascript">
+                atOptions = {
+                    'key': 'a8537e81a72deaee9e578b12150fe79b',
+                    'format': 'iframe',
+                    'height': 300,
+                    'width': 160,
+                    'params': {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/a8537e81a72deaee9e578b12150fe79b/invoke.js"></script>
         </div>
     </nav>
 
-    <!-- Main Section -->
-    <section id="section">
-        <div class="choice-container">
-            <button class="choice-button" onclick="choosePlatform('Android')">Android</button>
-            <button class="choice-button" onclick="choosePlatform('PC')">PC</button>
+    <section>
+        <div class="banner-container">
+            <div class="banner" onclick="window.location.href='android.html'">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <h2>Android</h2>
+                <p>Stream on your Android device</p>
+            </div>
+            <div class="banner" onclick="window.location.href='pc.html'">
+                <i class="fa-solid fa-desktop"></i>
+                <h2>PC</h2>
+                <p>Stream on your PC</p>
+            </div>
         </div>
     </section>
 
-    <script>
-        function choosePlatform(platform) {
-            alert('You chose ' + platform);
-        }
-    </script>
+    <!-- Scripts -->
+    <script src="your-script.js"></script>
 </body>
 </html>
