@@ -48,7 +48,6 @@ nav.navbar{
     height: 8%;
     position: fixed;
     width: 100%;
-    top: 0; /* Fix navbar to the top of the viewport */
 }
 
 nav.navbar .nav_left{
@@ -119,7 +118,6 @@ nav.navbar .nav_right button{
     nav.navbar .nav_right button:hover{
         background-color: rgba(75, 145, 104, 0.137)
     }
-
 
 /* Sidebar */
 .sidebar {

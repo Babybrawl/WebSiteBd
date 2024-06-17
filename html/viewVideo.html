@@ -33,15 +33,15 @@
             </ul>
 
             <ul id="CategoriesTag">
-            <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
-            <div id="rechercheTag">
-                <button id="action" onclick="searchTag('none')">None</button>
-                <button id="action" onclick="searchTag('action')">Action</button>
-                <button id="action" onclick="searchTag('horreur')">Horreur</button>
-                <button id="action" onclick="searchTag('comedie')">Comédie</button>
-                <button id="action" onclick="searchTag('romantiques/drama')">romantiques/drama</button>
-                <button id="action" onclick="searchTag('sf')">science-fiction</button>
-            </div>
+                <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
+                <div id="rechercheTag">
+                    <button id="action" onclick="searchTag('none')">None</button>
+                    <button id="action" onclick="searchTag('action')">Action</button>
+                    <button id="action" onclick="searchTag('horreur')">Horreur</button>
+                    <button id="action" onclick="searchTag('comedie')">Comédie</button>
+                    <button id="action" onclick="searchTag('romantiques/drama')">romantiques/drama</button>
+                    <button id="action" onclick="searchTag('sf')">science-fiction</button>
+                </div>
             </ul>
 
         </div>
@@ -116,3 +116,36 @@
 </script>
 
 </html>
+
+<script>
+    window.onresize = function() {
+        resizeWidth();
+    };
+
+    function resizeWidth(){
+        // Récupérer l'élément ButtonCategories
+        const buttonCategories = document.getElementById("ButtonCategories");
+
+        if (window.innerWidth <= 490) {
+            if(localStorage.getItem("tagDef") == 0){
+                buttonCategories.innerHTML = '' + "none";
+            }else{
+                buttonCategories.innerHTML = '' + localStorage.getItem("tagDef");
+            }
+            document.getElementById("CategoriesTag").style.padding = "20px";
+            document.getElementById("rechercheTag").style.marginLeft = "-79px";
+            document.getElementById("rechercheTag").style.width = "128px"
+            buttonCategories.style.width = "auto";
+        } else {
+            if(localStorage.getItem("tagDef") == 0){
+                buttonCategories.innerHTML = 'Categories : ' + "none";
+            }else{
+                buttonCategories.innerHTML = 'Categories : ' + localStorage.getItem("tagDef");
+            }
+            document.getElementById("CategoriesTag").style.padding = "40px";
+                            document.getElementById("rechercheTag").style.marginLeft = "0";
+            document.getElementById("rechercheTag").style.width = "150px"
+            buttonCategories.style.width = "150px";
+        }
+    }
+</script>
