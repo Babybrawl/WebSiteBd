@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="/style.css">    <!-- Link main CSS -->
+    <link rel="stylesheet" href="/style.css"> <!-- Link main CSS -->
     <link rel="stylesheet" href="/css/AdBlock.css">
     <link rel="icon" href="data:," />
-
     <script src="https://kit.fontawesome.com/3561a4943c.js" crossorigin="anonymous"></script> <!-- Fontawesome Lib -->
-
     <title>Website - Streaming </title>
 </head>
 <body class="hidden" onload="start2()">
@@ -35,15 +32,15 @@
             </ul>
 
             <ul id="CategoriesTag">
-            <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
-            <div id="rechercheTag">
-                <button id="action" onclick="searchTag('none')">None</button>
-                <button id="action" onclick="searchTag('action')">Action</button>
-                <button id="action" onclick="searchTag('horreur')">Horreur</button>
-                <button id="action" onclick="searchTag('comedie')">Comédie</button>
-                <button id="action" onclick="searchTag('romantiques/drama')">romantiques/drama</button>
-                <button id="action" onclick="searchTag('sf')">science-fiction</button>
-            </div>
+                <button onclick="searchCategories()" id="ButtonCategories">Categories : none</button>
+                <div id="rechercheTag">
+                    <button id="action" onclick="searchTag('none')">None</button>
+                    <button id="action" onclick="searchTag('action')">Action</button>
+                    <button id="action" onclick="searchTag('horreur')">Horreur</button>
+                    <button id="action" onclick="searchTag('comedie')">Comédie</button>
+                    <button id="action" onclick="searchTag('romantiques/drama')">romantiques/drama</button>
+                    <button id="action" onclick="searchTag('sf')">science-fiction</button>
+                </div>
             </ul>
 
         </div>
@@ -69,16 +66,21 @@
         </script>
         <script type="text/javascript" src="//www.topcreativeformat.com/a8537e81a72deaee9e578b12150fe79b/invoke.js"></script>
         <div class="nav_bottom">
-
         </div>
     </nav>
 
+    <!-- Main Section -->
     <section id="section">
-        <div>
-            Android
-        </div>
-
-        <div>
-            PC
+        <div class="choice-container">
+            <button class="choice-button" onclick="choosePlatform('Android')">Android</button>
+            <button class="choice-button" onclick="choosePlatform('PC')">PC</button>
         </div>
     </section>
+
+    <script>
+        function choosePlatform(platform) {
+            alert('You chose ' + platform);
+        }
+    </script>
+</body>
+</html>
