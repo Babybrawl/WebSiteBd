@@ -207,9 +207,29 @@
 
 <script>
         window.onresize = function() {
-            lala();
+            resizeWidth();
         };
-        function lala(){
-            console.log("lala");
+
+        function resizeWidth(){
+            // Récupérer l'élément ButtonCategories
+            const buttonCategories = document.getElementById("ButtonCategories");
+
+            if (window.innerWidth <= 490) {
+                if(localStorage.getItem("tagDef") == 0){
+                    buttonCategories.innerHTML = '' + "none";
+                }else{
+                    buttonCategories.innerHTML = '' + localStorage.getItem("tagDef");
+                }
+                document.getElementById("CategoriesTag").style.padding = "20px";
+                buttonCategories.style.width = "auto";
+            } else {
+                if(localStorage.getItem("tagDef") == 0){
+                    buttonCategories.innerHTML = 'Categories : ' + "none";
+                }else{
+                    buttonCategories.innerHTML = 'Categories : ' + localStorage.getItem("tagDef");
+                }
+                document.getElementById("CategoriesTag").style.padding = "40px";
+                buttonCategories.style.width = "150px";
+            }
         }
 </script>
