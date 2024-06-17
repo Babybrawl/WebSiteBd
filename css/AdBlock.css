@@ -101,12 +101,6 @@ section {
     background-color: #366D4F;
 }
 
-/* Additional responsive design */
-@media (max-width: 1200px) {
-    section{
-        padding: 0px 0 0 140px;
-    }
-}
 @media (max-width: 950px) {
     /* Styles pour les éléments section */
     section {
