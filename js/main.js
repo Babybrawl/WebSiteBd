@@ -162,6 +162,7 @@ async function displayTrendingMovies() {
 
 async function start(){
     try{
+        resizeWidth();
         const movie = await getMovieByTitle(localStorage.getItem("videoTitre"));
         document.getElementById('video').src = localStorage.getItem("videoSRC");
         document.getElementById('titre').innerHTML = localStorage.getItem("videoTitre");
@@ -240,6 +241,7 @@ async function start(){
 
 async function start2() {
     try {
+        resizeWidth();
         localStorage.setItem("ExploreTag", "rien");
         localStorage.setItem("tagDef", "none");
         displayTrendingMovies();
@@ -924,8 +926,6 @@ function resizeWidth(){
     }
 }
 
-    // Ajoutez un écouteur d'événement resize à la fenêtre
-    window.addEventListener('resize', resizeWidth);
-
-    // Appelez resizeWidth initialement pour vérifier la taille de la fenêtre au chargement
-    document.addEventListener('DOMContentLoaded', resizeWidth);
+    window.onresize = function(){
+        resizeWidth();
+    }

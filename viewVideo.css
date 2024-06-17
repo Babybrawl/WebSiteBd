@@ -167,7 +167,15 @@ nav.navbar .nav_right button{
 .sidebar .nav_top ul li a i {
     margin-right: 20px;
 }
+    /* li:hover */
+    nav.sidebar .nav_top ul li:hover{
+        background-color: #414142;
+    }
 
+    /* li.active:hover */
+    nav.sidebar .nav_top ul li.active:hover{
+        background-color: #366D4F;
+    }
 /* Video Container */
 .video-container {
     text-align: center;
