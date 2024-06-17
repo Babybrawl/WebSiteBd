@@ -46,7 +46,7 @@ async function getAllMovies() {
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-localStorage.setItem("tagDef", "none");
+
 array = [];
 var click = 0;
 var click3 = 0;
@@ -916,11 +916,19 @@ function resizeWidth(){
     const buttonCategories = document.getElementById("ButtonCategories");
 
     if (window.innerWidth <= 490) {
-        buttonCategories.innerHTML = '' + localStorage.getItem("tagDef");
+        if(localStorage.getItem("tagDef") == 0){
+            buttonCategories.innerHTML = '' + "none";
+        }else{
+            buttonCategories.innerHTML = '' + localStorage.getItem("tagDef");
+        }
         document.getElementById("CategoriesTag").style.padding = "20px";
         buttonCategories.style.width = "auto";
     } else {
-        buttonCategories.innerHTML = 'Categories : ' + localStorage.getItem("tagDef");
+        if(localStorage.getItem("tagDef") == 0){
+            buttonCategories.innerHTML = 'Categories : ' + "none";
+        }else{
+            buttonCategories.innerHTML = 'Categories : ' + localStorage.getItem("tagDef");
+        }
         document.getElementById("CategoriesTag").style.padding = "40px";
         buttonCategories.style.width = "150px";
     }
