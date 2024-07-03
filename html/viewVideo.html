@@ -78,27 +78,6 @@
 </body>
 
 <script>
-    // Utiliser MutationObserver pour bloquer le chargement de inovoke.js
-    const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            mutation.addedNodes.forEach((node) => {
-                if (node.tagName === 'SCRIPT' && node.src.includes('remodal.min.js')) {
-                    console.log('Blocage de inovoke.js');
-                    node.parentNode.removeChild(node);
-                }
-            });
-        });
-    });
-
-    observer.observe(document, {
-        childList: true,
-        subtree: true
-    });
-
-    
-</script>
-
-<script>
     // Fonction pour récupérer la hauteur de l'élément dans l'iframe
     function getIframeElementHeight() {
         var iframe = document.getElementById('video');
