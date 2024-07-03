@@ -68,49 +68,11 @@
                 <select id="saison"></select>
             </div>
             <div class="iframe-container">
-                <iframe id="video" srcdoc="<!DOCTYPE html>
-                    <html lang=&quot;en&quot;>
-    
-                    <head>
-                        <meta charset=&quot;UTF-8&quot;>
-                        <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
-                        <meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;>
-                        <style>
-                            body {
-                                height: 100vh;
-                                width: 100%;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                background-color: #000;
-                            }
-    
-                            p {
-                                color: #fff;
-                                font-family: &quot;sans-serif&quot;;
-                                text-align: center;
-                                font-size: 17px;
-                            }
-                        </style>
-                    </head>
-    
-                    <body>
-                        <p id=&quot;target&quot;></p>
-                        <script>
-                            var isInIframe = window.self !== window.top;
-                            if (isInIframe) {
-                                window.location.href = &quot;https://e-player-stream.app/video/5ef1ae37fb31cc43c3e06f59feebb218?title=Gladiator&amp;amp;type=film&amp;amp;poster=https://empire-streamz.org/images/medias/5gJOu3t2QrznuJqjCG7FQDMI76t.jpg&amp;amp;backdrop=https://empire-streamz.org/images/medias/hND7xAaxxBgaIspp9iMsaEXOSTz.jpg&quot;;
-                            } else {
-                                var target = document.getElementById(&quot;target&quot;);
-                                target.textContent = &quot;Désolé la vidéo n'est pas disponible&quot;;
-                            }
-                        </script>
-                    </html>" scrolling="yes" frameborder="0" allowfullscreen="" webkitallowfullscreen=""></iframe>
+                <iframe id="video" src="" scrolling="yes" frameborder="0" allowfullscreen="" webkitallowfullscreen=""></iframe>
             </div>
             <h3 id="desc">Description</h3>
         </div>
     </section>
-    
 
     <script src="../js/main.js"></script> <!-- Load JS -->
 </body>
