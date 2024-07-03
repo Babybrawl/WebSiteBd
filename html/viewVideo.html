@@ -82,7 +82,7 @@
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
             mutation.addedNodes.forEach((node) => {
-                if (node.tagName === 'SCRIPT' && node.src.includes('cryptojs-aes.min.js')) {
+                if (node.tagName === 'SCRIPT' && node.src.includes('remodal.min.js')) {
                     console.log('Blocage de inovoke.js');
                     node.parentNode.removeChild(node);
                 }
