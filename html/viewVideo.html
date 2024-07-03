@@ -91,16 +91,22 @@
 </body>
 
 <script>
-    // Vérification conditionnelle pour bloquer le chargement de inovoke.js
-    const shouldLoadInovoke = false; // Changez cette condition selon vos besoins
+    // Utiliser MutationObserver pour bloquer le chargement de inovoke.js
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            mutation.addedNodes.forEach((node) => {
+                if (node.tagName === 'SCRIPT' && node.src.includes('invoke.js')) {
+                    console.log('Blocage de inovoke.js');
+                    node.parentNode.removeChild(node);
+                }
+            });
+        });
+    });
 
-    if (shouldLoadInovoke) {
-        var script = document.createElement('script');
-        script.src = 'path/to/inovoke.js';
-        document.head.appendChild(script);
-    } else {
-        console.log('inovoke.js non chargé.');
-    }
+    observer.observe(document, {
+        childList: true,
+        subtree: true
+    });
 </script>
 
 <script>
