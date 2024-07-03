@@ -94,6 +94,30 @@
         childList: true,
         subtree: true
     });
+
+    function getElementByIdSafe(id) {
+    try {
+        return document.getElementById(id);
+    } catch (error) {
+        console.error('Error fetching element with ID:', id);
+        console.error('Error details:', error);
+        // Générer une trace de pile pour faciliter le débogage
+        console.trace();
+        // Autres actions de gestion d'erreur si nécessaire
+        return null; // Retourner null ou une valeur par défaut
+    }
+}
+
+// Exemple d'utilisation
+var element = getElementByIdSafe('myElement');
+if (element) {
+    // Faire quelque chose avec l'élément récupéré
+    console.log('Element found:', element);
+} else {
+    // Gérer le cas où l'élément n'est pas trouvé ou une erreur est survenue
+    console.warn('Element not found or error occurred.');
+}
+
 </script>
 
 <script>
