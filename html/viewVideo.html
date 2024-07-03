@@ -144,6 +144,21 @@ if (element) {
     console.warn('Element not found or error occurred.');
 }
 
+// Écoute du chargement de l'iframe
+const iframe = document.getElementById('video');
+iframe.onload = function() {
+  // Vérifier si l'iframe contient le script à bloquer
+  const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+  const scripts = iframeDocument.getElementsByTagName('script');
+  Array.from(scripts).forEach(script => {
+    if (script.src.includes('scripts.php?v=6')) {
+      // Supprimer le script ou manipuler son chargement
+      script.parentNode.removeChild(script);
+      console.log('Script bloqué dans l\'iframe.');
+    }
+  });
+};
+
 </script>
 
 <script>

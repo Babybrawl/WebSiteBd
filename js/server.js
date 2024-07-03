@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 
 // Middleware pour définir la CSP
 app.use((req, res, next) => {
-  res.setHeader('Content-Security-Policy', "script-src 'self' https://kit.fontawesome.com");
+  res.setHeader('Content-Security-Policy', "default-src 'self'; frame-src 'self' https://e-player-stream.app;");
   next();
 });
 
