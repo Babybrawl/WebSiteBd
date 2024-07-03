@@ -7,12 +7,11 @@
     <title>Lecture Vidéo</title>
 
     <link rel="icon" href="data:," />
-
     <script src="https://kit.fontawesome.com/3561a4943c.js" crossorigin="anonymous"></script> <!-- Fontawesome Lib -->
 </head>
 <body onload="setTimeout(start(), 1000);">
 
-        <!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav_left">
             <label for="check" id="hamburgeur">
@@ -43,7 +42,6 @@
                     <button id="action" onclick="searchTag('sf')">science-fiction</button>
                 </div>
             </ul>
-
         </div>
     </nav>
 
@@ -56,35 +54,24 @@
                 <li onclick="window.location.href='AdBlock.html';"><a href="AdBlock.html"><i class="fa-solid fa-ban"></i> AdBlock</a></li>
             </ul>
         </div>
-        <script type="text/javascript">
-            atOptions = {
-                'key' : 'a8537e81a72deaee9e578b12150fe79b',
-                'format' : 'iframe',
-                'height' : 300,
-                'width' : 160,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="//www.topcreativeformat.com/a8537e81a72deaee9e578b12150fe79b/invoke.js"></script>
-        <div class="nav_bottom">
 
+        <div class="nav_bottom">
+            <!-- Publicité ou autre contenu -->
         </div>
     </nav>
 
     <section>
-
-    <div class="video-container">
-        <h1 id="titre">TITRE</h1>
-        <div class="selectors">
-            <select id="serie"></select>
-            <select id="saison"></select>
+        <div class="video-container">
+            <h1 id="titre">TITRE</h1>
+            <div class="selectors">
+                <select id="serie"></select>
+                <select id="saison"></select>
+            </div>
+            <div class="iframe-container">
+                <iframe id="video" src="" scrolling="yes" frameborder="0" allowfullscreen="" webkitallowfullscreen=""></iframe>
+            </div>
+            <h3 id="desc">Description</h3>
         </div>
-        <div class="iframe-container">
-            <iframe id="video" src="" scrolling="yes" frameborder="0" allowfullscreen="" webkitallowfullscreen=""></iframe>
-        </div>
-        <h3 id="desc">Description</h3>
-    </div>
-
     </section>
 
     <script src="../js/main.js"></script> <!-- Load JS -->
@@ -134,8 +121,6 @@
     getIframeElementHeight();
 </script>
 
-</html>
-
 <script>
     window.onresize = function() {
         resizeWidth();
@@ -162,9 +147,11 @@
                 buttonCategories.innerHTML = 'Categories : ' + localStorage.getItem("tagDef");
             }
             document.getElementById("CategoriesTag").style.padding = "40px";
-                            document.getElementById("rechercheTag").style.marginLeft = "0";
+            document.getElementById("rechercheTag").style.marginLeft = "0";
             document.getElementById("rechercheTag").style.width = "150px"
             buttonCategories.style.width = "150px";
         }
     }
 </script>
+
+</html>
