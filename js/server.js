@@ -1,6 +1,7 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
@@ -10,11 +11,11 @@ const mongoURI = "mongodb+srv://nicolasbabybrawl:QDRGrf8sq2OMtCKH@babybrawl.aod6
 const client = new MongoClient(mongoURI);
 
 // Middleware pour permettre les requêtes CORS
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept']
+}));
 
 // Servir les fichiers statiques (CSS, JS, images)
 app.use(express.static(path.join(__dirname, 'public')));
