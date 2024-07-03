@@ -16,6 +16,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// Middleware pour définir la CSP
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', "script-src 'self' https://kit.fontawesome.com");
+  next();
+});
+
 // Servir les fichiers statiques (CSS, JS, images)
 app.use(express.static(path.join(__dirname, 'public')));
 
