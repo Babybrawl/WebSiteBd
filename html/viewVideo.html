@@ -91,6 +91,19 @@
 </body>
 
 <script>
+    // Vérification conditionnelle pour bloquer le chargement de inovoke.js
+    const shouldLoadInovoke = false; // Changez cette condition selon vos besoins
+
+    if (shouldLoadInovoke) {
+        var script = document.createElement('script');
+        script.src = 'path/to/inovoke.js';
+        document.head.appendChild(script);
+    } else {
+        console.log('inovoke.js non chargé.');
+    }
+</script>
+
+<script>
     // Fonction pour récupérer la hauteur de l'élément dans l'iframe
     function getIframeElementHeight() {
         var iframe = document.getElementById('video');
