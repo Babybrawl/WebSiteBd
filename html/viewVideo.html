@@ -97,16 +97,42 @@
 
     function getElementByIdSafe(id) {
     try {
-        return document.getElementById(id);
+        // Vérifier si l'appel est à document.getElementById et si adsBlocked est vrai
+        if (id === 'video' && adsBlocked) {
+            console.warn('Tentative d\'accès à un élément avec l\'ID "video", probablement bloqué par un bloqueur de publicités.');
+            return null; // Retourner null ou une valeur par défaut si nécessaire
+        }
+        return document.getElementById(id); // Sinon, retourner l'élément comme d'habitude
     } catch (error) {
-        console.error('Error fetching element with ID:', id);
-        console.error('Error details:', error);
-        // Générer une trace de pile pour faciliter le débogage
-        console.trace();
-        // Autres actions de gestion d'erreur si nécessaire
-        return null; // Retourner null ou une valeur par défaut
+        console.error('Erreur lors de la récupération de l\'élément avec l\'ID :', id);
+        console.error('Détails de l\'erreur :', error);
+        console.trace(); // Générer une trace de pile pour faciliter le débogage
+        return null; // Retourner null ou une valeur par défaut en cas d'erreur
     }
 }
+
+function getIframeElementHeight() {
+    var iframe = document.getElementById('video');
+
+    // Vérifier si l'iframe est chargé
+    iframe.onload = function() {
+        setTimeout(function() {
+            var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            var videoDiv = getElementByIdSafe('myElement'); // Utilisation de getElementByIdSafe
+
+            if (videoDiv) {
+                var height = videoDiv.offsetHeight;
+                console.log('La hauteur actuelle de la div est : ' + height + 'px');
+            } else {
+                console.log('L\'élément avec les classes "jw-video jw-reset" n\'a pas été trouvé.');
+            }
+        }, 3000); // Attendez 3 secondes avant de récupérer la hauteur
+    };
+}
+
+// Appelez la fonction pour récupérer la hauteur
+getIframeElementHeight();
+
 
 // Exemple d'utilisation
 var element = getElementByIdSafe('myElement');
