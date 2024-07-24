@@ -160,85 +160,76 @@ async function displayTrendingMovies() {
 
 
 
-async function start(){
-    try{
+async function start() {
+    try {
         resizeWidth();
-        const movie = await getMovieByTitle(localStorage.getItem("videoTitre"));
-        document.getElementById('video').src = localStorage.getItem("videoSRC");
-        document.getElementById('titre').innerHTML = localStorage.getItem("videoTitre");
-        document.getElementById('desc').innerHTML = localStorage.getItem("videoDesc");
+        const movieTitle = localStorage.getItem("videoTitre");
+        const movie = await getMovieByTitle(movieTitle);
         
-        if(document.getElementById("serie").options.length <= 0){
-            if (localStorage.getItem("episode") > 0) {
-                const resultat = parseInt(localStorage.getItem("episode")); // Convertir en nombre entier
-                const res = suite(resultat);
-                for (let i = 0; i < res.length; i++) {
-                    const option = document.createElement("option");
-                    option.text = res[i]; // Accéder à chaque élément du tableau
-                    document.getElementById("serie").appendChild(option);
-                }
-            }
-        }
+        document.getElementById('video').src = localStorage.getItem("videoSRC");
+        document.getElementById('titre').innerHTML = movieTitle;
+        document.getElementById('desc').innerHTML = localStorage.getItem("videoDesc");
 
-        if(document.getElementById("saison").options.length <= 0){
-            if (localStorage.getItem("saison") > 0) {
-                const resultat = parseInt(localStorage.getItem("saison")); // Convertir en nombre entier
-                const res = suite(resultat);
-                for (let i = 0; i < res.length; i++) {
-                    const option = document.createElement("option");
-                    option.text = "saison" + res[i]; // Accéder à chaque élément du tableau
-                    document.getElementById("saison").appendChild(option);
-                }
-            }
-        }
+        const serieElem = document.getElementById("serie");
+        const saisonElem = document.getElementById("saison");
 
-        if(document.getElementById("serie").options.length != 0){
-            document.getElementById("serie").style.visibility = "visible";
-            document.getElementById("saison").style.visibility = "visible";
-            document.getElementById("saison").selectedIndex = parseInt(localStorage.getItem(localStorage.getItem("videoTitre") + "NumberSaison")) - 1;
-            document.getElementById("serie").selectedIndex = parseInt(localStorage.getItem(localStorage.getItem("videoTitre") + "NumberEpisode")) - 1;
-            const ep = parseInt(localStorage.getItem(localStorage.getItem("videoTitre") + "NumberEpisode"));
-            const sais = parseInt(localStorage.getItem(localStorage.getItem("videoTitre") + "NumberSaison"));
-            if(sais == 1){
-                if(ep == 1){
-                    document.getElementById('video').src = movie["link"];
-                    alert(movie["link"]);
-                }else{
-                    document.getElementById('video').src = movie["link" + ep];
-                }
-            }else{
-                if(ep == 1){
-                    document.getElementById('video').src = movie[sais + "link"];
-                }else{
-                    document.getElementById('video').src = movie[sais + "link" + ep];
-                }
-            }
-        }else{
-            document.getElementById("serie").style.visibility = "hidden";
-            document.getElementById("saison").style.visibility = "hidden";
-        }
-        const url = 'file:///E:/Streaming/Streaming/Streaming/html/viewVideo.html/proxy?url=https://moacloud.com/';
-
-        fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Réponse réseau incorrecte');
-                }
-                return response.text();
-            })
-            .then(data => {
-                // Manipulez les données récupérées ici
-                console.log(data);
-            })
-            .catch(error => {
-                console.error('Erreur lors de la récupération des données:', error);
+        if (serieElem.options.length <= 0 && localStorage.getItem("episode") > 0) {
+            const episode = parseInt(localStorage.getItem("episode"));
+            const res = suite(episode);
+            res.forEach(optionText => {
+                const option = document.createElement("option");
+                option.text = optionText;
+                serieElem.appendChild(option);
             });
+        }
+
+        if (saisonElem.options.length <= 0 && localStorage.getItem("saison") > 0) {
+            const saison = parseInt(localStorage.getItem("saison"));
+            const res = suite(saison);
+            res.forEach(optionText => {
+                const option = document.createElement("option");
+                option.text = "saison " + optionText;
+                saisonElem.appendChild(option);
+            });
+        }
+
+        if (serieElem.options.length > 0) {
+            serieElem.style.visibility = "visible";
+            saisonElem.style.visibility = "visible";
+
+            const selectedSaison = parseInt(localStorage.getItem(movieTitle + "NumberSaison")) - 1;
+            const selectedEpisode = parseInt(localStorage.getItem(movieTitle + "NumberEpisode")) - 1;
+
+            saisonElem.selectedIndex = selectedSaison;
+            serieElem.selectedIndex = selectedEpisode;
+
+            const ep = selectedEpisode + 1;
+            const sais = selectedSaison + 1;
+
+            if (sais === 1) {
+                document.getElementById('video').src = ep === 1 ? movie["link"] : movie["link" + ep];
+            } else {
+                document.getElementById('video').src = ep === 1 ? movie[sais + "link"] : movie[sais + "link" + ep];
+            }
+        } else {
+            serieElem.style.visibility = "hidden";
+            saisonElem.style.visibility = "hidden";
+        }
+
+        const url = 'https://moacloud.com/';  // Remplacez par une URL HTTP ou HTTPS valide
+
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Réponse réseau incorrecte');
+        }
+        const data = await response.text();
+        console.log(data);
 
     } catch (error) {
-        console.error("Une erreur s'est produite dans start2 :", error);
+        console.error("Une erreur s'est produite dans start :", error);
     }
-    
 }
+
 
 async function start2() {
     try {
