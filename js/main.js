@@ -158,8 +158,6 @@ async function displayTrendingMovies() {
 }
 
 
-
-
 async function start() {
     try {
         resizeWidth();
@@ -216,19 +214,11 @@ async function start() {
             saisonElem.style.visibility = "hidden";
         }
 
-        const url = 'https://moacloud.com/';  // Remplacez par une URL HTTP ou HTTPS valide
-
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error('Réponse réseau incorrecte');
-        }
-        const data = await response.text();
-        console.log(data);
-
     } catch (error) {
         console.error("Une erreur s'est produite dans start :", error);
     }
 }
+
 
 
 async function start2() {
