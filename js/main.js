@@ -202,6 +202,7 @@ async function start(){
             if(sais == 1){
                 if(ep == 1){
                     document.getElementById('video').src = movie["link"];
+                    alert(movie["link"]);
                 }else{
                     document.getElementById('video').src = movie["link" + ep];
                 }
