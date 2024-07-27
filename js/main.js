@@ -808,6 +808,8 @@ async function plus2() {
                 const episodeNumber = parseInt(selectedEpisodeText.split(' ')[1]);
                 const propertyName = x.substring(6) + 'link';
     
+                console.log(`Changing episode - Selected Episode Text: ${selectedEpisodeText}, Property Name: ${propertyName}`);
+    
                 if (episodeNumber === 1) {
                     if (x.substring(6) == 1) {
                         videoView(movie.titre, movie.link, movie.description, movie.tag, movie.episode, movie.saison);
@@ -825,6 +827,8 @@ async function plus2() {
                 const selectedSaisonText = saisonElem.options[saisonElem.selectedIndex].text;
                 const saisonNumber = parseInt(selectedSaisonText.split(' ')[1]);
                 const propertyName = saisonNumber + 'link' + x;
+    
+                console.log(`Changing season - Selected Saison Text: ${selectedSaisonText}, Property Name: ${propertyName}`);
     
                 if (saisonNumber === 1) {
                     if (x == 1) {
