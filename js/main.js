@@ -171,16 +171,7 @@ async function start() {
         const serieElem = document.getElementById("serie");
         const saisonElem = document.getElementById("saison");
 
-        if (serieElem.options.length <= 0 && localStorage.getItem("episode") > 0) {
-            const episode = parseInt(localStorage.getItem("episode"));
-            const res = suite(episode);
-            res.forEach(optionText => {
-                const option = document.createElement("option");
-                option.text = optionText;
-                serieElem.appendChild(option);
-            });
-        }
-
+        // Remplir la liste des saisons si nécessaire
         if (saisonElem.options.length <= 0 && localStorage.getItem("saison") > 0) {
             const saison = parseInt(localStorage.getItem("saison"));
             const res = suite(saison);
@@ -188,6 +179,19 @@ async function start() {
                 const option = document.createElement("option");
                 option.text = "saison " + optionText;
                 saisonElem.appendChild(option);
+            });
+        }
+
+        // Remplir la liste des épisodes en fonction de la saison sélectionnée
+        if (serieElem.options.length <= 0 && localStorage.getItem("episode") > 0) {
+            const episode = parseInt(localStorage.getItem("episode"));
+            let saison = saisonElem.selectedIndex + 1; // Saison actuelle
+            let episodeKey = (saison === 1) ? "episode" : saison + "episode";
+            const res = suite(parseInt(movie[episodeKey]));
+            res.forEach(optionText => {
+                const option = document.createElement("option");
+                option.text = optionText;
+                serieElem.appendChild(option);
             });
         }
 
@@ -204,6 +208,7 @@ async function start() {
             const ep = selectedEpisode + 1;
             const sais = selectedSaison + 1;
 
+            // Met à jour la source de la vidéo en fonction de la saison et de l'épisode
             if (sais === 1) {
                 document.getElementById('video').src = ep === 1 ? movie["link"] : movie["link" + ep];
             } else {
