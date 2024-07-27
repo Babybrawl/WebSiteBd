@@ -213,7 +213,12 @@ async function start() {
             serieElem.style.visibility = "hidden";
             saisonElem.style.visibility = "hidden";
         }
-        alert(document.getElementById("saison").value);
+
+        if(document.getElementById("saison").value == 1){
+            document.getElementById("serie").value = movie[episode];
+        }else{
+            document.getElementById("serie").value = movie[document.getElementById("saison").value.substring(7) + episode];
+        }
     } catch (error) {
         console.error("Une erreur s'est produite dans start :", error);
     }
