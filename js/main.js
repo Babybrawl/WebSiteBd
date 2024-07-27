@@ -225,6 +225,7 @@ async function start() {
             console.log("ta grand mere", movie.episode);
 
             if (saisonNumber === 1) {
+                alert("saisonnuer1");
                 const selectElement = document.getElementById('serie');
 
                 // Supprimer toutes les options
