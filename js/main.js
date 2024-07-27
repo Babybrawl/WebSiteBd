@@ -223,7 +223,7 @@ async function start() {
             const saisonNumber = saisonValue.substring(6); // Extraire le numéro de saison
 
             if (saisonNumber === 1) {
-                console.log(movie[episode]);
+                console.log("ta grand mere", movie);
                 serieElem.value = movie[ep === 1 ? "link" : "link" + ep];
             } else {
                 const episodeLink = movie[saisonNumber + "link" + ep] || movie[saisonNumber + "link"];
