@@ -234,8 +234,10 @@ async function start() {
                 // Mettre à jour la source de la vidéo en fonction de la nouvelle saison et du premier épisode
                 const newEp = 1;
                 if (newSaison === 1) {
+                    alert(newEp === 1 ? movie["link"] : movie["link" + newEp]);
                     document.getElementById('video').src = newEp === 1 ? movie["link"] : movie["link" + newEp];
                 } else {
+                    alert(newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp]);
                     document.getElementById('video').src = newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp];
                 }
             });
