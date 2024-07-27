@@ -163,12 +163,10 @@ async function start() {
         resizeWidth();
         const movieTitle = localStorage.getItem("videoTitre");
         const movie = await getMovieByTitle(movieTitle);
-
-        const videoSrc = localStorage.getItem("videoSRC");
-        const videoDesc = localStorage.getItem("videoDesc");
-        document.getElementById('video').src = videoSrc;
+        
+        document.getElementById('video').src = localStorage.getItem("videoSRC");
         document.getElementById('titre').innerHTML = movieTitle;
-        document.getElementById('desc').innerHTML = videoDesc;
+        document.getElementById('desc').innerHTML = localStorage.getItem("videoDesc");
 
         const serieElem = document.getElementById("serie");
         const saisonElem = document.getElementById("saison");
@@ -186,7 +184,7 @@ async function start() {
         // Fonction pour remplir la liste des épisodes en fonction de la saison sélectionnée
         const updateEpisodeList = (saison) => {
             serieElem.innerHTML = ''; // Clear previous episode options
-            let episodeKey = (saison === 1) ? "episode" : saison + "episode";
+            let episodeKey = (saison === 1) ? "episode" : `${saison}episode`;
             const numEpisodes = parseInt(movie[episodeKey]);
             console.log(`Saison ${saison} - Episode Key: ${episodeKey}, Number of Episodes: ${numEpisodes}`);
 
@@ -229,7 +227,6 @@ async function start() {
         console.error("Une erreur s'est produite dans start :", error);
     }
 }
-
 
 
 
