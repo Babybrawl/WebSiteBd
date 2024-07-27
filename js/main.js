@@ -223,7 +223,7 @@ async function start() {
             const saisonNumber = saisonValue.substring(6); // Extraire le numéro de saison
 
             console.log("ta grand mere", movie.episode);
-            alert("saison number :", saisonNumber);
+            alert("saison number :", saisonValue);
             if (saisonNumber == 1) {
                 alert("saisonnuer1");
                 const selectElement = document.getElementById('serie');
