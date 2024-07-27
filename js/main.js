@@ -163,7 +163,7 @@ async function start() {
         resizeWidth();
         const movieTitle = localStorage.getItem("videoTitre");
         const movie = await getMovieByTitle(movieTitle);
-        
+
         document.getElementById('video').src = localStorage.getItem("videoSRC");
         document.getElementById('titre').innerHTML = movieTitle;
         document.getElementById('desc').innerHTML = localStorage.getItem("videoDesc");
@@ -171,31 +171,35 @@ async function start() {
         const serieElem = document.getElementById("serie");
         const saisonElem = document.getElementById("saison");
 
-        if (serieElem.options.length <= 0 && localStorage.getItem("episode") > 0) {
-            const episode = parseInt(localStorage.getItem("episode"));
-            const res = suite(episode);
-            res.forEach(optionText => {
-                const option = document.createElement("option");
-                option.text = optionText;
-                serieElem.appendChild(option);
-            });
-        }
-
+        // Remplir la liste des saisons
         if (saisonElem.options.length <= 0 && localStorage.getItem("saison") > 0) {
-            const saison = parseInt(localStorage.getItem("saison"));
-            const res = suite(saison);
-            res.forEach(optionText => {
+            const numSaisons = parseInt(localStorage.getItem("saison"));
+            for (let i = 1; i <= numSaisons; i++) {
                 const option = document.createElement("option");
-                option.text = "saison " + optionText;
+                option.text = "saison " + i;
                 saisonElem.appendChild(option);
-            });
+            }
         }
 
-        if (serieElem.options.length > 0) {
-            serieElem.style.visibility = "visible";
-            saisonElem.style.visibility = "visible";
+        // Fonction pour remplir la liste des épisodes en fonction de la saison sélectionnée
+        const updateEpisodeList = (saison) => {
+            serieElem.innerHTML = ''; // Clear previous episode options
+            let episodeKey = (saison === 1) ? "episode" : saison + "episode";
+            const numEpisodes = parseInt(movie[episodeKey]);
+            for (let i = 1; i <= numEpisodes; i++) {
+                const option = document.createElement("option");
+                option.text = "Episode " + i;
+                serieElem.appendChild(option);
+            }
+        };
 
-            const selectedSaison = parseInt(localStorage.getItem(movieTitle + "NumberSaison")) - 1;
+        // Initialiser la liste des épisodes
+        if (saisonElem.options.length > 0) {
+            const initialSaison = parseInt(localStorage.getItem(movieTitle + "NumberSaison"));
+            updateEpisodeList(initialSaison);
+
+            // Sélectionner la saison et l'épisode sauvegardés dans localStorage
+            const selectedSaison = initialSaison - 1;
             const selectedEpisode = parseInt(localStorage.getItem(movieTitle + "NumberEpisode")) - 1;
 
             saisonElem.selectedIndex = selectedSaison;
@@ -204,6 +208,7 @@ async function start() {
             const ep = selectedEpisode + 1;
             const sais = selectedSaison + 1;
 
+            // Mettre à jour la source de la vidéo en fonction de la saison et de l'épisode
             if (sais === 1) {
                 document.getElementById('video').src = ep === 1 ? movie["link"] : movie["link" + ep];
             } else {
@@ -218,10 +223,8 @@ async function start() {
                 // Mettre à jour la source de la vidéo en fonction de la nouvelle saison et du premier épisode
                 const newEp = 1;
                 if (newSaison === 1) {
-                    alert(newEp === 1 ? movie["link"] : movie["link" + newEp]);
                     document.getElementById('video').src = newEp === 1 ? movie["link"] : movie["link" + newEp];
                 } else {
-                    alert(newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp]);
                     document.getElementById('video').src = newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp];
                 }
             });
@@ -820,9 +823,9 @@ async function plus2() {
             const serieElem = document.getElementById("serie");
             const saisonElem = document.getElementById("saison");
             
-            if(saison == 1){
+            if (saison == 1) {
                 const selectedEpisodeText = serieElem.options[serieElem.selectedIndex].text;
-                const propertyName = x.substring(6)+'link';
+                const propertyName = x.substring(6) + 'link';
     
                 if (selectedEpisodeText == 1) {
                     if (x.substring(6) == 1) {
@@ -862,6 +865,7 @@ async function plus2() {
             alert("Erreur: " + error.message); // Afficher le message d'erreur
         }
     }
+    
     
 
 async function populateCatalogue() {
