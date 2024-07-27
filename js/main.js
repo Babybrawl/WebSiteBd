@@ -163,19 +163,20 @@ async function start() {
         resizeWidth();
         const movieTitle = localStorage.getItem("videoTitre");
         const movie = await getMovieByTitle(movieTitle);
-        
+
         const videoSrc = localStorage.getItem("videoSRC");
+        const videoDesc = localStorage.getItem("videoDesc");
         document.getElementById('video').src = videoSrc;
         document.getElementById('titre').innerHTML = movieTitle;
-        document.getElementById('desc').innerHTML = localStorage.getItem("videoDesc");
+        document.getElementById('desc').innerHTML = videoDesc;
 
-        console.log("Video SRC:", videoSrc);  // Log the video source
-        console.log("Movie details:", movie); // Log the movie details
+        console.log("Video SRC:", videoSrc);
+        console.log("Movie details:", movie);
 
         const serieElem = document.getElementById("serie");
         const saisonElem = document.getElementById("saison");
 
-        // Remplir la liste des saisons si nécessaire
+        // Remplir la liste des saisons
         if (saisonElem.options.length <= 0 && localStorage.getItem("saison") > 0) {
             const numSaisons = parseInt(localStorage.getItem("saison"));
             for (let i = 1; i <= numSaisons; i++) {
