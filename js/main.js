@@ -163,54 +163,38 @@ async function start() {
         resizeWidth();
         const movieTitle = localStorage.getItem("videoTitre");
         const movie = await getMovieByTitle(movieTitle);
-
-        const videoSrc = localStorage.getItem("videoSRC");
-        const videoDesc = localStorage.getItem("videoDesc");
-        document.getElementById('video').src = videoSrc;
+        
+        document.getElementById('video').src = localStorage.getItem("videoSRC");
         document.getElementById('titre').innerHTML = movieTitle;
-        document.getElementById('desc').innerHTML = videoDesc;
-
-        console.log("Video SRC:", videoSrc);
-        console.log("Movie details:", movie);
+        document.getElementById('desc').innerHTML = localStorage.getItem("videoDesc");
 
         const serieElem = document.getElementById("serie");
         const saisonElem = document.getElementById("saison");
 
-        // Remplir la liste des saisons
-        if (saisonElem.options.length <= 0 && localStorage.getItem("saison") > 0) {
-            const numSaisons = parseInt(localStorage.getItem("saison"));
-            for (let i = 1; i <= numSaisons; i++) {
-                const option = document.createElement("option");
-                option.text = "saison " + i;
-                saisonElem.appendChild(option);
-            }
-        }
-
-        // Fonction pour remplir la liste des épisodes en fonction de la saison sélectionnée
-        const updateEpisodeList = (saison) => {
-            serieElem.innerHTML = ''; // Clear previous episode options
-            let episodeKey = (saison === 1) ? "episode" : saison + "episode";
-            const numEpisodes = parseInt(movie[episodeKey]);
-            for (let i = 1; i <= numEpisodes; i++) {
-                const option = document.createElement("option");
-                option.text = "Episode " + i;
-                serieElem.appendChild(option);
-            }
-            console.log(`Episodes for saison ${saison}:`, numEpisodes);
-        };
-
-        // Initialiser la liste des épisodes
         if (serieElem.options.length <= 0 && localStorage.getItem("episode") > 0) {
-            const initialSaison = parseInt(localStorage.getItem("saison"));
-            updateEpisodeList(initialSaison);
+            const episode = parseInt(localStorage.getItem("episode"));
+            const res = suite(episode);
+            res.forEach(optionText => {
+                const option = document.createElement("option");
+                option.text = optionText;
+                serieElem.appendChild(option);
+            });
         }
 
-        // Afficher les listes déroulantes des saisons et épisodes si elles sont remplies
+        if (saisonElem.options.length <= 0 && localStorage.getItem("saison") > 0) {
+            const saison = parseInt(localStorage.getItem("saison"));
+            const res = suite(saison);
+            res.forEach(optionText => {
+                const option = document.createElement("option");
+                option.text = "saison " + optionText;
+                saisonElem.appendChild(option);
+            });
+        }
+
         if (serieElem.options.length > 0) {
             serieElem.style.visibility = "visible";
             saisonElem.style.visibility = "visible";
 
-            // Sélectionner la saison et l'épisode sauvegardés dans localStorage
             const selectedSaison = parseInt(localStorage.getItem(movieTitle + "NumberSaison")) - 1;
             const selectedEpisode = parseInt(localStorage.getItem(movieTitle + "NumberEpisode")) - 1;
 
@@ -220,13 +204,10 @@ async function start() {
             const ep = selectedEpisode + 1;
             const sais = selectedSaison + 1;
 
-            // Mettre à jour la source de la vidéo en fonction de la saison et de l'épisode
             if (sais === 1) {
                 document.getElementById('video').src = ep === 1 ? movie["link"] : movie["link" + ep];
-                console.log("Video link:", ep === 1 ? movie["link"] : movie["link" + ep]);
             } else {
                 document.getElementById('video').src = ep === 1 ? movie[sais + "link"] : movie[sais + "link" + ep];
-                console.log("Video link:", ep === 1 ? movie[sais + "link"] : movie[sais + "link" + ep]);
             }
 
             // Ajouter un événement pour mettre à jour les épisodes lorsque la saison change
@@ -237,13 +218,11 @@ async function start() {
                 // Mettre à jour la source de la vidéo en fonction de la nouvelle saison et du premier épisode
                 const newEp = 1;
                 if (newSaison === 1) {
-                    alert(`Nouvelle URL: ${newEp === 1 ? movie["link"] : movie["link" + newEp]}`);
+                    alert(newEp === 1 ? movie["link"] : movie["link" + newEp]);
                     document.getElementById('video').src = newEp === 1 ? movie["link"] : movie["link" + newEp];
-                    console.log("Video link:", newEp === 1 ? movie["link"] : movie["link" + newEp]);
                 } else {
-                    alert(`Nouvelle URL: ${newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp]}`);
+                    alert(newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp]);
                     document.getElementById('video').src = newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp];
-                    console.log("Video link:", newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp]);
                 }
             });
 
@@ -252,13 +231,9 @@ async function start() {
                 const newEp = e.target.selectedIndex + 1;
                 const currentSaison = saisonElem.selectedIndex + 1;
                 if (currentSaison === 1) {
-                    alert(`Nouvelle URL: ${newEp === 1 ? movie["link"] : movie["link" + newEp]}`);
                     document.getElementById('video').src = newEp === 1 ? movie["link"] : movie["link" + newEp];
-                    console.log("Video link:", newEp === 1 ? movie["link"] : movie["link" + newEp]);
                 } else {
-                    alert(`Nouvelle URL: ${newEp === 1 ? movie[currentSaison + "link"] : movie[currentSaison + "link" + newEp]}`);
                     document.getElementById('video').src = newEp === 1 ? movie[currentSaison + "link"] : movie[currentSaison + "link" + newEp];
-                    console.log("Video link:", newEp === 1 ? movie[currentSaison + "link"] : movie[currentSaison + "link" + newEp]);
                 }
             });
 
@@ -839,66 +814,55 @@ async function plus2() {
       change(selectedValue, 0);
     });
 
-async function change(x, saison) {
-    try {
-        const movie = await getMovieByTitle(localStorage.getItem("videoTitre"));
-        if(saison == 1){
-            const episodeSelect = document.getElementById("serie");
-            const selectedEpisodeText = episodeSelect.options[episodeSelect.selectedIndex].text;
-            const propertyName = x.substring(6)+'link';
-
-            alert(selectedEpisodeText);
-
-            if(selectedEpisodeText == 1){
-                if (x.substring(6) == 1){
-                    videoView(movie.titre, movie.link, movie.description, movie.tag, movie.episode, movie.saison);
-                    start();
-                }else{
-                    videoView(movie.titre, movie[propertyName], movie.description, movie.tag, movie.episode, movie.saison);
-                    start();
-                }
-            }else{
-                if (x.substring(6) == 1){
-                    videoView(movie.titre, movie["link" + selectedEpisodeText], movie.description, movie.tag, movie.episode, movie.saison);
-                    start();
-                }else{
-                    videoView(movie.titre, movie[propertyName + selectedEpisodeText], movie.description, movie.tag, movie.episode, movie.saison);
-                    start();
-                }
-            }
-        }else{
-            const saisonSelect = document.getElementById("saison");
-            const selectedSaisonText = saisonSelect.options[saisonSelect.selectedIndex].text;
-            alert(selectedSaisonText);
+    async function change(x, saison) {
+        try {
+            const movie = await getMovieByTitle(localStorage.getItem("videoTitre"));
+            const serieElem = document.getElementById("serie");
+            const saisonElem = document.getElementById("saison");
             
-            if (selectedSaisonText.substring(6) == 1) {
-                const propertyName = 'link' + x;
-                alert(propertyName);
-                if (x == 1) {
-                    videoView(movie.titre, movie.link, movie.description, movie.tag, movie.episode, movie.saison);
-                    start();
+            if(saison == 1){
+                const selectedEpisodeText = serieElem.options[serieElem.selectedIndex].text;
+                const propertyName = x.substring(6)+'link';
+    
+                if (selectedEpisodeText == 1) {
+                    if (x.substring(6) == 1) {
+                        videoView(movie.titre, movie.link, movie.description, movie.tag, movie.episode, movie.saison);
+                    } else {
+                        videoView(movie.titre, movie[propertyName], movie.description, movie.tag, movie.episode, movie.saison);
+                    }
                 } else {
-                    videoView(movie.titre, movie[propertyName], movie.description, movie.tag, movie.episode, movie.saison);
-                    start();
+                    if (x.substring(6) == 1) {
+                        videoView(movie.titre, movie["link" + selectedEpisodeText], movie.description, movie.tag, movie.episode, movie.saison);
+                    } else {
+                        videoView(movie.titre, movie[propertyName + selectedEpisodeText], movie.description, movie.tag, movie.episode, movie.saison);
+                    }
                 }
             } else {
-                const propertyName = selectedSaisonText.substring(6) + 'link' + x;
-                alert(selectedSaisonText.substring(6));
-                if (x == 1) {
-                    videoView(movie.titre, movie[selectedSaisonText.substring(6) + "link"], movie.description, movie.tag, movie.episode, movie.saison);
-                    start();
+                const selectedSaisonText = saisonElem.options[saisonElem.selectedIndex].text;
+                
+                if (selectedSaisonText.substring(6) == 1) {
+                    const propertyName = 'link' + x;
+                    if (x == 1) {
+                        videoView(movie.titre, movie.link, movie.description, movie.tag, movie.episode, movie.saison);
+                    } else {
+                        videoView(movie.titre, movie[propertyName], movie.description, movie.tag, movie.episode, movie.saison);
+                    }
                 } else {
-                    videoView(movie.titre, movie[propertyName], movie.description, movie.tag, movie.episode, movie.saison);
-                    start();
+                    const propertyName = selectedSaisonText.substring(6) + 'link' + x;
+                    if (x == 1) {
+                        videoView(movie.titre, movie[selectedSaisonText.substring(6) + "link"], movie.description, movie.tag, movie.episode, movie.saison);
+                    } else {
+                        videoView(movie.titre, movie[propertyName], movie.description, movie.tag, movie.episode, movie.saison);
+                    }
                 }
             }
+            start(); // Re-start to reflect changes in UI
+        } catch (error) {
+            console.error("Une erreur s'est produite dans la fonction change :", error);
+            alert("Erreur: " + error.message); // Afficher le message d'erreur
         }
-
-    } catch (error) {
-        console.error("Une erreur s'est produite dans la fonction change :", error);
-        alert("Erreur: " + error.message); // Afficher le message d'erreur
     }
-}
+    
 
 async function populateCatalogue() {
     try {
