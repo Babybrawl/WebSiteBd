@@ -196,6 +196,7 @@ async function start() {
                 option.text = "Episode " + i;
                 serieElem.appendChild(option);
             }
+            console.log(`Episodes for saison ${saison}:`, numEpisodes);
         };
 
         // Initialiser la liste des épisodes
@@ -222,8 +223,10 @@ async function start() {
             // Mettre à jour la source de la vidéo en fonction de la saison et de l'épisode
             if (sais === 1) {
                 document.getElementById('video').src = ep === 1 ? movie["link"] : movie["link" + ep];
+                console.log("Video link:", ep === 1 ? movie["link"] : movie["link" + ep]);
             } else {
                 document.getElementById('video').src = ep === 1 ? movie[sais + "link"] : movie[sais + "link" + ep];
+                console.log("Video link:", ep === 1 ? movie[sais + "link"] : movie[sais + "link" + ep]);
             }
 
             // Ajouter un événement pour mettre à jour les épisodes lorsque la saison change
@@ -234,11 +237,13 @@ async function start() {
                 // Mettre à jour la source de la vidéo en fonction de la nouvelle saison et du premier épisode
                 const newEp = 1;
                 if (newSaison === 1) {
-                    alert(newEp === 1 ? movie["link"] : movie["link" + newEp]);
+                    alert(`Nouvelle URL: ${newEp === 1 ? movie["link"] : movie["link" + newEp]}`);
                     document.getElementById('video').src = newEp === 1 ? movie["link"] : movie["link" + newEp];
+                    console.log("Video link:", newEp === 1 ? movie["link"] : movie["link" + newEp]);
                 } else {
-                    alert(newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp]);
+                    alert(`Nouvelle URL: ${newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp]}`);
                     document.getElementById('video').src = newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp];
+                    console.log("Video link:", newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp]);
                 }
             });
 
@@ -247,9 +252,13 @@ async function start() {
                 const newEp = e.target.selectedIndex + 1;
                 const currentSaison = saisonElem.selectedIndex + 1;
                 if (currentSaison === 1) {
+                    alert(`Nouvelle URL: ${newEp === 1 ? movie["link"] : movie["link" + newEp]}`);
                     document.getElementById('video').src = newEp === 1 ? movie["link"] : movie["link" + newEp];
+                    console.log("Video link:", newEp === 1 ? movie["link"] : movie["link" + newEp]);
                 } else {
+                    alert(`Nouvelle URL: ${newEp === 1 ? movie[currentSaison + "link"] : movie[currentSaison + "link" + newEp]}`);
                     document.getElementById('video').src = newEp === 1 ? movie[currentSaison + "link"] : movie[currentSaison + "link" + newEp];
+                    console.log("Video link:", newEp === 1 ? movie[currentSaison + "link"] : movie[currentSaison + "link" + newEp]);
                 }
             });
 
