@@ -164,9 +164,11 @@ async function start() {
         const movieTitle = localStorage.getItem("videoTitre");
         const movie = await getMovieByTitle(movieTitle);
 
-        document.getElementById('video').src = localStorage.getItem("videoSRC");
+        const videoSrc = localStorage.getItem("videoSRC");
+        const videoDesc = localStorage.getItem("videoDesc");
+        document.getElementById('video').src = videoSrc;
         document.getElementById('titre').innerHTML = movieTitle;
-        document.getElementById('desc').innerHTML = localStorage.getItem("videoDesc");
+        document.getElementById('desc').innerHTML = videoDesc;
 
         const serieElem = document.getElementById("serie");
         const saisonElem = document.getElementById("saison");
@@ -186,6 +188,8 @@ async function start() {
             serieElem.innerHTML = ''; // Clear previous episode options
             let episodeKey = (saison === 1) ? "episode" : saison + "episode";
             const numEpisodes = parseInt(movie[episodeKey]);
+            console.log(`Saison ${saison} - Episode Key: ${episodeKey}, Number of Episodes: ${numEpisodes}`);
+
             for (let i = 1; i <= numEpisodes; i++) {
                 const option = document.createElement("option");
                 option.text = "Episode " + i;
@@ -208,38 +212,14 @@ async function start() {
             const ep = selectedEpisode + 1;
             const sais = selectedSaison + 1;
 
+            console.log(`Selected Season: ${sais}, Selected Episode: ${ep}`);
+
             // Mettre à jour la source de la vidéo en fonction de la saison et de l'épisode
             if (sais === 1) {
                 document.getElementById('video').src = ep === 1 ? movie["link"] : movie["link" + ep];
             } else {
                 document.getElementById('video').src = ep === 1 ? movie[sais + "link"] : movie[sais + "link" + ep];
             }
-
-            // Ajouter un événement pour mettre à jour les épisodes lorsque la saison change
-            saisonElem.addEventListener('change', (e) => {
-                const newSaison = e.target.selectedIndex + 1;
-                updateEpisodeList(newSaison);
-
-                // Mettre à jour la source de la vidéo en fonction de la nouvelle saison et du premier épisode
-                const newEp = 1;
-                if (newSaison === 1) {
-                    document.getElementById('video').src = newEp === 1 ? movie["link"] : movie["link" + newEp];
-                } else {
-                    document.getElementById('video').src = newEp === 1 ? movie[newSaison + "link"] : movie[newSaison + "link" + newEp];
-                }
-            });
-
-            // Ajouter un événement pour mettre à jour la source de la vidéo lorsque l'épisode change
-            serieElem.addEventListener('change', (e) => {
-                const newEp = e.target.selectedIndex + 1;
-                const currentSaison = saisonElem.selectedIndex + 1;
-                if (currentSaison === 1) {
-                    document.getElementById('video').src = newEp === 1 ? movie["link"] : movie["link" + newEp];
-                } else {
-                    document.getElementById('video').src = newEp === 1 ? movie[currentSaison + "link"] : movie[currentSaison + "link" + newEp];
-                }
-            });
-
         } else {
             serieElem.style.visibility = "hidden";
             saisonElem.style.visibility = "hidden";
