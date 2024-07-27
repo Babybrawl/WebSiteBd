@@ -220,7 +220,7 @@ async function start() {
 
             // Mettre à jour l'épisode en fonction de la saison sélectionnée
             const saisonValue = saisonElem.value;
-            const saisonNumber = saisonValue.substring(7); // Extraire le numéro de saison
+            const saisonNumber = saisonValue.substring(6); // Extraire le numéro de saison
 
             if (saisonNumber === 1) {
                 serieElem.value = movie[ep === 1 ? "link" : "link" + ep];
