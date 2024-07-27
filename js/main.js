@@ -213,7 +213,7 @@ async function start() {
             serieElem.style.visibility = "hidden";
             saisonElem.style.visibility = "hidden";
         }
-
+        alert(document.getElementById("saison").value);
     } catch (error) {
         console.error("Une erreur s'est produite dans start :", error);
     }
