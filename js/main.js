@@ -220,6 +220,7 @@ async function start() {
 
             // Mettre à jour l'épisode en fonction de la saison sélectionnée
             const saisonValue = saisonElem.value;
+            alert(saisonValue);
             const saisonNumber = saisonValue.substring(6); // Extraire le numéro de saison
 
             if (saisonNumber === 1) {
