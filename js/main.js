@@ -209,16 +209,17 @@ async function start() {
             } else {
                 document.getElementById('video').src = ep === 1 ? movie[sais + "link"] : movie[sais + "link" + ep];
             }
+
+            if(document.getElementById("saison").value == 1){
+                document.getElementById("serie").value = movie[episode];
+            }else{
+                document.getElementById("serie").value = movie[document.getElementById("saison").value.substring(7) + episode];
+            }
         } else {
             serieElem.style.visibility = "hidden";
             saisonElem.style.visibility = "hidden";
         }
 
-        if(document.getElementById("saison").value == 1){
-            document.getElementById("serie").value = movie[episode];
-        }else{
-            document.getElementById("serie").value = movie[document.getElementById("saison").value.substring(7) + episode];
-        }
     } catch (error) {
         console.error("Une erreur s'est produite dans start :", error);
     }
