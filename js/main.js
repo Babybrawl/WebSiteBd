@@ -225,7 +225,20 @@ async function start() {
             console.log("ta grand mere", movie.episode);
 
             if (saisonNumber === 1) {
-                serieElem.value = movie[ep === 1 ? "link" : "link" + ep];
+                const selectElement = document.getElementById('serie');
+
+                // Supprimer toutes les options
+                while (selectElement.options.length > 0) {
+                    selectElement.remove(0);
+                }
+            
+                // Ajouter les options en fonction du nombre d'épisodes
+                for (let i = 1; i <= parseInt(movie.episode); i++) {
+                    const option = document.createElement("option");
+                    option.text = "Episode " + i;
+                    option.value = i; // Utilisez l'épisode comme valeur
+                    selectElement.appendChild(option);
+                }
             } else {
                 const episodeLink = movie[saisonNumber + "link" + ep] || movie[saisonNumber + "link"];
                 serieElem.value = episodeLink;
