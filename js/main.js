@@ -163,11 +163,14 @@ async function start() {
         resizeWidth();
         const movieTitle = localStorage.getItem("videoTitre");
         const movie = await getMovieByTitle(movieTitle);
-
-        // Affichage des détails du film
-        document.getElementById('video').src = localStorage.getItem("videoSRC");
+        
+        const videoSrc = localStorage.getItem("videoSRC");
+        document.getElementById('video').src = videoSrc;
         document.getElementById('titre').innerHTML = movieTitle;
         document.getElementById('desc').innerHTML = localStorage.getItem("videoDesc");
+
+        console.log("Video SRC:", videoSrc);  // Log the video source
+        console.log("Movie details:", movie); // Log the movie details
 
         const serieElem = document.getElementById("serie");
         const saisonElem = document.getElementById("saison");
@@ -256,6 +259,7 @@ async function start() {
         console.error("Une erreur s'est produite dans start :", error);
     }
 }
+
 
 
 
