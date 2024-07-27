@@ -188,6 +188,7 @@ async function start() {
             let saison = saisonElem.selectedIndex + 1; // Saison actuelle
             let episodeKey = (saison === 1) ? "episode" : saison + "episode";
             const res = suite(parseInt(movie[episodeKey]));
+            alert(res);
             res.forEach(optionText => {
                 const option = document.createElement("option");
                 option.text = optionText;
