@@ -163,14 +163,20 @@ async function start() {
         resizeWidth();
         const movieTitle = localStorage.getItem("videoTitre");
         const movie = await getMovieByTitle(movieTitle);
-        
-        document.getElementById('video').src = localStorage.getItem("videoSRC");
-        document.getElementById('titre').innerHTML = movieTitle;
-        document.getElementById('desc').innerHTML = localStorage.getItem("videoDesc");
 
+        // Initialisation des éléments du DOM
+        const videoElem = document.getElementById('video');
+        const titreElem = document.getElementById('titre');
+        const descElem = document.getElementById('desc');
         const serieElem = document.getElementById("serie");
         const saisonElem = document.getElementById("saison");
 
+        // Configuration initiale de la vidéo
+        videoElem.src = localStorage.getItem("videoSRC");
+        titreElem.innerHTML = movieTitle;
+        descElem.innerHTML = localStorage.getItem("videoDesc");
+
+        // Remplir les options des épisodes et saisons
         if (serieElem.options.length <= 0 && localStorage.getItem("episode") > 0) {
             const episode = parseInt(localStorage.getItem("episode"));
             const res = suite(episode);
@@ -191,6 +197,7 @@ async function start() {
             });
         }
 
+        // Rendre visibles les listes déroulantes si elles ont des options
         if (serieElem.options.length > 0) {
             serieElem.style.visibility = "visible";
             saisonElem.style.visibility = "visible";
@@ -204,16 +211,22 @@ async function start() {
             const ep = selectedEpisode + 1;
             const sais = selectedSaison + 1;
 
+            // Mise à jour de la source de la vidéo
             if (sais === 1) {
-                document.getElementById('video').src = ep === 1 ? movie["link"] : movie["link" + ep];
+                videoElem.src = ep === 1 ? movie["link"] : movie["link" + ep];
             } else {
-                document.getElementById('video').src = ep === 1 ? movie[sais + "link"] : movie[sais + "link" + ep];
+                videoElem.src = ep === 1 ? movie[sais + "link"] : movie[sais + "link" + ep];
             }
 
-            if(document.getElementById("saison").value == 1){
-                document.getElementById("serie").value = movie[episode];
-            }else{
-                document.getElementById("serie").value = movie[document.getElementById("saison").value.substring(7) + episode];
+            // Mettre à jour l'épisode en fonction de la saison sélectionnée
+            const saisonValue = saisonElem.value;
+            const saisonNumber = parseInt(saisonValue.split(' ')[1]); // Extraire le numéro de saison
+
+            if (saisonNumber === 1) {
+                serieElem.value = movie[ep === 1 ? "link" : "link" + ep];
+            } else {
+                const episodeLink = movie[saisonNumber + "link" + ep] || movie[saisonNumber + "link"];
+                serieElem.value = episodeLink;
             }
         } else {
             serieElem.style.visibility = "hidden";
