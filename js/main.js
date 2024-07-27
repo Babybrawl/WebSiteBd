@@ -822,12 +822,13 @@ async function plus2() {
             const movie = await getMovieByTitle(localStorage.getItem("videoTitre"));
             const serieElem = document.getElementById("serie");
             const saisonElem = document.getElementById("saison");
-            
+    
             if (saison == 1) {
                 const selectedEpisodeText = serieElem.options[serieElem.selectedIndex].text;
+                const episodeNumber = parseInt(selectedEpisodeText.split(' ')[1]);
                 const propertyName = x.substring(6) + 'link';
     
-                if (selectedEpisodeText == 1) {
+                if (episodeNumber === 1) {
                     if (x.substring(6) == 1) {
                         videoView(movie.titre, movie.link, movie.description, movie.tag, movie.episode, movie.saison);
                     } else {
@@ -835,25 +836,25 @@ async function plus2() {
                     }
                 } else {
                     if (x.substring(6) == 1) {
-                        videoView(movie.titre, movie["link" + selectedEpisodeText], movie.description, movie.tag, movie.episode, movie.saison);
+                        videoView(movie.titre, movie["link" + episodeNumber], movie.description, movie.tag, movie.episode, movie.saison);
                     } else {
-                        videoView(movie.titre, movie[propertyName + selectedEpisodeText], movie.description, movie.tag, movie.episode, movie.saison);
+                        videoView(movie.titre, movie[propertyName + episodeNumber], movie.description, movie.tag, movie.episode, movie.saison);
                     }
                 }
             } else {
                 const selectedSaisonText = saisonElem.options[saisonElem.selectedIndex].text;
-                
-                if (selectedSaisonText.substring(6) == 1) {
-                    const propertyName = 'link' + x;
+                const saisonNumber = parseInt(selectedSaisonText.split(' ')[1]);
+                const propertyName = saisonNumber + 'link' + x;
+    
+                if (saisonNumber === 1) {
                     if (x == 1) {
                         videoView(movie.titre, movie.link, movie.description, movie.tag, movie.episode, movie.saison);
                     } else {
                         videoView(movie.titre, movie[propertyName], movie.description, movie.tag, movie.episode, movie.saison);
                     }
                 } else {
-                    const propertyName = selectedSaisonText.substring(6) + 'link' + x;
                     if (x == 1) {
-                        videoView(movie.titre, movie[selectedSaisonText.substring(6) + "link"], movie.description, movie.tag, movie.episode, movie.saison);
+                        videoView(movie.titre, movie[saisonNumber + "link"], movie.description, movie.tag, movie.episode, movie.saison);
                     } else {
                         videoView(movie.titre, movie[propertyName], movie.description, movie.tag, movie.episode, movie.saison);
                     }
